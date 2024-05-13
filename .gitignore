@@ -1,5 +1,6 @@
 # files to be ignored
 .DS_Store
+*.css.map
 
 
 #folders to be ignored

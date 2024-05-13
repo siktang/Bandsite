@@ -1,2 +1,6 @@
 # files to be ignored
 .DS_Store
+
+
+#folders to be ignored
+.vscode

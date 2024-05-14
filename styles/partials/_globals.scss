@@ -1,4 +1,53 @@
-html, body {
+@use './typography' as *;
+@use './variables' as *;
+
+// General rules
+* {
+    box-sizing: border-box;
     padding: 0px;
     margin: 0px;
+    font-family: 'Avenir';
+}
+
+img {
+    width: 90vw;
+}
+
+// Rules for header
+
+  header {
+    text-align: center;
+    background-color: $primary-color-black;
   }
+
+  .navbar {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+
+// rules for footer 
+
+footer {
+    text-align: left;
+    background-color: $primary-color-black;
+
+    @extend .font-white;
+}
+
+
+//   rules for fonts
+  .pageheader {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .subheader {
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+
+  .font-white {
+    color: $primary-color-white;
+  }
+

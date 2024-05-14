@@ -1,4 +1,64 @@
+@font-face {
+  font-family: "Avenir";
+  src: url(../../assets/Font/AvenirNextLTPro-Regular.otf) format("otf");
+}
+@font-face {
+  font-family: "Avenir";
+  src: url(../../assets/Font/AvenirNextLTPro-Bold.otf) format("otf");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Avenir";
+  src: url(../../assets/Font/AvenirNextLTPro-Demi.otf) format("otf");
+  font-weight: 600;
+}
+* {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+  font-family: "Avenir";
+}
+
+img {
+  width: 90vw;
+}
+
+header {
+  text-align: center;
+  background-color: #323232;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+footer {
+  text-align: left;
+  background-color: #323232;
+}
+
+.pageheader {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.subheader {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.font-white, footer {
+  color: #FFFFFF;
+}
+
 .hero {
   background-image: url(../assets/Images/hero-bio.jpg);
   background-size: cover;
+  height: auto;
+}
+
+.img-container {
+  display: flex;
+  flex-direction: column;
 }/*# sourceMappingURL=bio.css.map */

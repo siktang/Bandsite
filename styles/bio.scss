@@ -1,4 +1,15 @@
+@use "./partials/globals";
+@use "./partials/typography";
+@use "./partials/mixins" as *;
+@use "./partials/variables" as *;
+
 .hero {
     background-image: url(../assets/Images/hero-bio.jpg);
     background-size: cover;
+    height: auto;
+}
+
+.img-container {
+    display: flex;
+    flex-direction: column;
 }

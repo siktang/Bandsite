@@ -24,12 +24,11 @@ img {
   padding: 0 1rem 1rem 1rem;
 }
 
-header {
+.header {
   text-align: center;
   background-color: #323232;
 }
-
-.navbar {
+.header__navbar {
   display: flex;
   justify-content: space-evenly;
 }
@@ -39,14 +38,43 @@ footer {
   background-color: #323232;
 }
 
-.pageheader {
+.social__icons {
+  display: flex;
+  justify-content: space-between;
+  width: 30vw;
+}
+.social__icons img {
+  width: auto;
+}
+
+.logo, .section-header {
   font-size: 1.5rem;
+  font-weight: 400;
   line-height: 2rem;
+  padding: 1rem;
 }
 
 .subheader {
   font-size: 0.875rem;
   font-weight: 600;
+  padding: 1rem;
+}
+
+.body-copy, .footer-copy {
+  font-size: 0.813rem;
+  line-height: 1.125rem;
+  padding: 1rem;
+}
+
+.active {
+  border-bottom: 4px;
+}
+
+.font__white {
+  color: #FFFFFF;
+}
+.font__silver {
+  color: #AFAFAF;
 }
 
 .font-white, footer {

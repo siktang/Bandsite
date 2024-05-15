@@ -16,14 +16,14 @@ img {
 
 // Rules for header
 
-  header {
+  .header {
     text-align: center;
     background-color: $primary-color-black;
-  }
 
-  .navbar {
+    &__navbar {
     display: flex;
     justify-content: space-evenly;
+    }
   }
 
 
@@ -36,19 +36,55 @@ footer {
     @extend .font-white;
 }
 
+.address, .agent {
+  display: flex;
+  flex-direction: column;
+}
+
+.social__icons {
+    display: flex;
+    justify-content: space-between;
+    width: 30vw;
+
+    img {
+      width: auto;
+    }
+}
+
 
 //   rules for fonts
-  .pageheader {
+  .logo, .section-header {
     font-size: 1.5rem;
+    font-weight: 400;
     line-height: 2rem;
+    padding: 1rem;
   }
 
   .subheader {
     font-size: 0.875rem;
     font-weight: 600;
+    padding: 1rem;
   }
 
-  .font-white {
-    color: $primary-color-white;
+  .body-copy, .footer-copy {
+    font-size: 0.813rem;
+    line-height: 1.125rem;
+    padding: 1rem;
   }
+
+  .active {
+    border-bottom: 4px;
+  }
+
+  .font {
+    
+    &__white {
+      color: $primary-color-white;
+    }
+
+    &__silver {
+      color: $primary-color-silver;
+    }
+}
+
 

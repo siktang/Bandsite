@@ -14,9 +14,6 @@ img {
     padding: 0 1rem 1rem 1rem;
 }
 
-.logo {
-  max-height: 1.25rem;
-}
 
 // Rules for header
 
@@ -35,48 +32,99 @@ img {
     }
   }
 
-
-// rules for footer 
-
-footer {
-    text-align: left;
-    background-color: $primary-color-black;
-}
-
-.address, .agent {
-  display: flex;
-  flex-direction: column;
-}
-
-.social__icons {
-    display: flex;
-    justify-content: space-between;
-    width: 30vw;
-
-    img {
-      width: auto;
-    }
-}
-
-
-//   rules for fonts
-  .logo, .section-header {
+  .logo {
     font-size: 1.5rem;
     font-weight: 400;
     line-height: 2rem;
     padding: 1rem;
+    font-weight: 400;
+  }
+
+// rules for footer 
+
+.footer {
+    text-align: left;
+    background-color: $primary-color-black;
+
+    &__social {
+      @media screen and (min-width:$tablet-breakpoint) {
+        display: flex;
+        align-items: baseline;
+      }  
+
+      &--icons {
+    display: flex;
+    justify-content: space-between;
+    width: 30vw;
+}  
+    }
+
+    &__contact-info {
+      @media screen and (min-width:$tablet-breakpoint) {
+        display: flex;
+        justify-content: space-evenly;
+      }  
+    }
+
+}
+
+.address, .agent1, .agent2 {
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+
+//   rules for fonts
+
+  .page-header {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    padding: 1rem;
+    font-weight: 700;
+
+    @media screen and (min-width:$tablet-breakpoint) {
+      font-size: 3.75rem;
+      line-height: 4.25rem;
+    }
+  }
+
+  .section-header {
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 2rem;
+    padding: 1rem;
+    font-weight: 700;
+
+    @media screen and (min-width:$tablet-breakpoint) {
+      font-size: 2.25rem;
+      line-height: 2.75rem;
+      padding: 2.25rem;
+    }
   }
 
   .subheader {
     font-size: 0.875rem;
     font-weight: 600;
     padding: 1rem;
+
+    @media screen and (min-width:$tablet-breakpoint) {
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
+
   }
 
   .body-copy, .footer-copy {
     font-size: 0.813rem;
     line-height: 1.125rem;
     padding: 1rem;
+
+    @media screen and (min-width:$tablet-breakpoint) {
+      font-size: 0.875rem;
+      line-height: 1.375rem;
+    }
   }
 
   .active {

@@ -4,25 +4,78 @@
 @use "./partials/variables" as *;
 
 .hero {
-    position: relative;
+    display: flex;
+    justify-content: left;
+    align-items: center;
     background: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url(../assets/Images/hero-bio.jpg);
     background-size: cover;
     height: 16rem;
 
-    h2 {
-        position: relative;
-        top: 7rem;
+    @media screen and (min-width: $tablet-breakpoint) {
+        height: 30rem;
     }
 }
 
 .headline {
-    padding: 24px 16px 16px 16px;
+    
+    &__title {
+    padding: 1.5rem 1rem 1rem 1rem;
+
+    @media screen and (min-width: $tablet-breakpoint) {
+        padding: 3rem 2.25rem 2.25rem 2.25rem;
+    }
+    }
+
+    &__image, &__article {
+        @media screen and (min-width:$tablet-breakpoint) {
+            width: 75vw;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
 }
 
+.about {
+
+    &__title {
+        @media screen and (min-width: $tablet-breakpoint) {
+            width: 75vw;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    &__article {
+        @media screen and (min-width: $tablet-breakpoint) {
+            display: flex;
+            justify-content: space-evenly;
+            width: 75vw;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}
 
 .img-container {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+
+    @media screen and (min-width: $tablet-breakpoint) {
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        row-gap: 1.5rem;
+        padding: 0 2.25rem 2.25rem 2.25rem;
+    }
+
+    img {
+        @media screen and (min-width: $tablet-breakpoint) {
+            padding: 0;
+            width: 29vw;
+        }
+    }
 }

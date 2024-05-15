@@ -24,6 +24,10 @@ img {
   padding: 0 1rem 1rem 1rem;
 }
 
+.logo {
+  max-height: 1.25rem;
+}
+
 .header {
   text-align: center;
   background-color: #323232;
@@ -31,6 +35,7 @@ img {
 @media screen and (min-width: 768px) {
   .header {
     display: flex;
+    align-items: center;
   }
 }
 .header__navbar {
@@ -88,10 +93,10 @@ footer {
 }
 
 .hero {
-  background-image: url(../assets/Images/hero-bio.jpg);
+  position: relative;
+  background: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url(../assets/Images/hero-bio.jpg);
   background-size: cover;
   height: 16rem;
-  position: relative;
 }
 .hero h2 {
   position: relative;

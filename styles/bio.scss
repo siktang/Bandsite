@@ -4,10 +4,10 @@
 @use "./partials/variables" as *;
 
 .hero {
-    background-image: url(../assets/Images/hero-bio.jpg);
+    position: relative;
+    background: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url(../assets/Images/hero-bio.jpg);
     background-size: cover;
     height: 16rem;
-    position: relative;
 
     h2 {
         position: relative;

@@ -28,6 +28,11 @@ img {
   text-align: center;
   background-color: #323232;
 }
+@media screen and (min-width: 768px) {
+  .header {
+    display: flex;
+  }
+}
 .header__navbar {
   display: flex;
   justify-content: space-evenly;
@@ -36,6 +41,11 @@ img {
 footer {
   text-align: left;
   background-color: #323232;
+}
+
+.address, .agent {
+  display: flex;
+  flex-direction: column;
 }
 
 .social__icons {
@@ -77,14 +87,15 @@ footer {
   color: #AFAFAF;
 }
 
-.font-white, footer {
-  color: #FFFFFF;
-}
-
 .hero {
   background-image: url(../assets/Images/hero-bio.jpg);
   background-size: cover;
   height: 16rem;
+  position: relative;
+}
+.hero h2 {
+  position: relative;
+  top: 7rem;
 }
 
 .headline {

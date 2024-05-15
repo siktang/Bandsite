@@ -20,6 +20,10 @@ img {
     text-align: center;
     background-color: $primary-color-black;
 
+    @media screen and (min-width: $tablet-breakpoint) {
+      display: flex;
+    }
+
     &__navbar {
     display: flex;
     justify-content: space-evenly;
@@ -32,8 +36,6 @@ img {
 footer {
     text-align: left;
     background-color: $primary-color-black;
-
-    @extend .font-white;
 }
 
 .address, .agent {

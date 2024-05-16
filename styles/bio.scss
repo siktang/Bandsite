@@ -14,6 +14,23 @@
     @media screen and (min-width: $tablet-breakpoint) {
         height: 30rem;
     }
+
+    &__title {
+        font-size: 1.5rem;
+        line-height: 2rem;
+        padding: 1rem;
+        font-weight: 700;
+
+        @media screen and (min-width:$tablet-breakpoint) {
+            font-size: 3.75rem;
+            line-height: 4.25rem;
+        }
+
+        @media screen and (min-width:$desktop-breakpoint) {
+        padding: 5rem;
+        }
+        }
+
 }
 
 .headline {

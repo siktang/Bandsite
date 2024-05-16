@@ -14,6 +14,13 @@ img {
     padding: 0 1rem 1rem 1rem;
 }
 
+.logo {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 2rem;
+  padding: 1rem;
+  font-weight: 400;
+}
 
 // Rules for header
 
@@ -26,18 +33,16 @@ img {
       align-items: center;
     }
 
+    @media screen and (min-width: $desktop-breakpoint) {
+      display: flex;
+      align-items: center;
+      padding-left: 5rem;
+    }
+
     &__navbar {
     display: flex;
     justify-content: space-evenly;
     }
-  }
-
-  .logo {
-    font-size: 1.5rem;
-    font-weight: 400;
-    line-height: 2rem;
-    padding: 1rem;
-    font-weight: 400;
   }
 
 // rules for footer 
@@ -46,26 +51,58 @@ img {
     text-align: left;
     background-color: $primary-color-black;
 
+    @media screen and (min-width:$tablet-breakpoint) {
+      position: relative;
+    }
+
     &__social {
+     
       @media screen and (min-width:$tablet-breakpoint) {
         display: flex;
-        align-items: baseline;
+        align-items: center;
       }  
 
       &--icons {
-    display: flex;
-    justify-content: space-between;
-    width: 30vw;
-}  
+        display: flex;
+        justify-content: space-between;
+        width: 30vw;
+      
+        @media screen and (min-width:$tablet-breakpoint) {
+          width: 20vw;
+        }
+
+        img {
+          width: auto;
+          height: auto;
+        }
+      }
+      
+      
     }
 
     &__contact-info {
       @media screen and (min-width:$tablet-breakpoint) {
         display: flex;
-        justify-content: space-evenly;
+        justify-content: space-between;
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
       }  
     }
 
+    &__logo {
+      @media screen and (min-width:$tablet-breakpoint) {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 1rem;
+      }    
+    }
+
+    &__copyright {
+      @media screen and (min-width:$tablet-breakpoint) {
+        padding: 1.25rem;
+        }
+      }
 }
 
 .address, .agent1, .agent2 {
@@ -78,35 +115,23 @@ img {
 
 //   rules for fonts
 
-  .page-header {
-    font-size: 1.5rem;
-    line-height: 2rem;
-    padding: 1rem;
-    font-weight: 700;
-
-    @media screen and (min-width:$tablet-breakpoint) {
-      font-size: 3.75rem;
-      line-height: 4.25rem;
-    }
-  }
-
-  .section-header {
+.section-header {
     font-size: 1.5rem;
     font-weight: 400;
     line-height: 2rem;
     padding: 1rem;
     font-weight: 700;
 
-    @media screen and (min-width:$tablet-breakpoint) {
+  @media screen and (min-width:$tablet-breakpoint) {
       font-size: 2.25rem;
       line-height: 2.75rem;
       padding: 2.25rem;
     }
   }
 
-  .subheader {
+.subheader {
     font-size: 0.875rem;
-    font-weight: 600;
+    font-weight: 400;
     padding: 1rem;
 
     @media screen and (min-width:$tablet-breakpoint) {

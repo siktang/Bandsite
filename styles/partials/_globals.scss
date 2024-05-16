@@ -15,11 +15,9 @@ img {
 }
 
 .logo {
-  font-size: 1.5rem;
-  font-weight: 400;
-  line-height: 2rem;
-  padding: 1rem;
-  font-weight: 400;
+  height: 1.5rem;
+  width: 7.5rem;
+  padding: 0;
 }
 
 // Rules for header
@@ -39,6 +37,10 @@ img {
       padding-left: 5rem;
     }
 
+    &__logo {
+      margin: 1rem;
+    }
+
     &__navbar {
     display: flex;
     justify-content: space-evenly;
@@ -50,10 +52,7 @@ img {
 .footer {
     text-align: left;
     background-color: $primary-color-black;
-
-    @media screen and (min-width:$tablet-breakpoint) {
-      position: relative;
-    }
+    position: relative;
 
     &__social {
      
@@ -87,21 +86,40 @@ img {
         padding-left: 1.25rem;
         padding-right: 1.25rem;
       }  
+
+      @media screen and (min-width:$desktop-breakpoint) {
+        padding-left: 4rem;
+        width: 80vw;
+      }  
     }
 
     &__logo {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      margin: 1rem;
+      
+      
       @media screen and (min-width:$tablet-breakpoint) {
         position: absolute;
         top: 0;
         right: 0;
-        margin: 1rem;
-      }    
+        margin: 1.5rem;
+      }  
+      
+      @media screen and (min-width:$tablet-breakpoint) {
+        margin: 3rem;
+      } 
     }
 
     &__copyright {
       @media screen and (min-width:$tablet-breakpoint) {
         padding: 1.25rem;
         }
+
+        @media screen and (min-width:$desktop-breakpoint) {
+          padding: 2rem 4rem 2rem 4rem;
+          }
       }
 }
 
@@ -161,6 +179,7 @@ img {
   }
 
   .active {
+    font-weight: 700;
     border-bottom: 4px;
   }
 

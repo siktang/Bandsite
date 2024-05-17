@@ -23,17 +23,18 @@ img {
 // Rules for header
 
   .header {
+    
+    width: 100vw;
     text-align: center;
     background-color: $primary-color-black;
 
     @media screen and (min-width: $tablet-breakpoint) {
+      position: fixed;
       display: flex;
       align-items: center;
     }
 
     @media screen and (min-width: $desktop-breakpoint) {
-      display: flex;
-      align-items: center;
       padding-left: 5rem;
     }
 
@@ -47,6 +48,7 @@ img {
 
       a {
         text-decoration: none;
+        padding-top: 0;
       }
     }
   }
@@ -68,7 +70,7 @@ img {
       &--icons {
         display: flex;
         justify-content: space-between;
-        width: 30vw;
+        width: 10rem;
       
         @media screen and (min-width:$tablet-breakpoint) {
           width: 20vw;
@@ -101,6 +103,7 @@ img {
       position: relative;
       top: 1rem;
       left: 1rem;
+      margin-bottom: 1rem;
       
       @media screen and (min-width:$tablet-breakpoint) {
         position: absolute;
@@ -159,7 +162,7 @@ img {
 
 .subheader {
     font-size: 0.875rem;
-    font-weight: 400;
+    font-weight: 600;
     padding: 1rem;
 
     @media screen and (min-width:$tablet-breakpoint) {
@@ -180,10 +183,7 @@ img {
     }
   }
 
-  .active {
-    font-weight: 700;
-    border-bottom: 4px;
-  }
+  
 
   .font {
     
@@ -194,6 +194,12 @@ img {
     &__silver {
       color: $primary-color-silver;
     }
-}
+  }
+
+  .active {
+    color: $primary-color-white;
+    font-weight: 700;
+    border-bottom: 4px;
+  }
 
 

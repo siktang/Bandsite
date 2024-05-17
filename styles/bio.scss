@@ -9,7 +9,8 @@
     align-items: center;
     background: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url(../assets/Images/hero-bio.jpg);
     background-size: cover;
-    height: 16rem;
+    height: 50vh;
+    scroll-margin-top: 2rem;
 
     @media screen and (min-width: $tablet-breakpoint) {
         height: 30rem;
@@ -47,7 +48,23 @@
         }
     }
 
-    &__image, &__article {
+    &__image {
+            padding-bottom: 0;
+        }
+
+    &__article {
+        font-size: 0.875rem;
+        font-weight: 700;
+        padding: 1rem 1rem 0.5rem 1rem;
+
+        &--quotee {
+            font-size: 0.875rem;
+            font-weight: 700;
+            padding: 0 1rem 1rem 1rem;
+        }
+    }
+    
+        &__image, &__article {
         @media screen and (min-width:$tablet-breakpoint) {
             width: 75vw;
             display: block;
@@ -55,6 +72,8 @@
             margin-right: auto;
         }
     }
+
+    
 
 }
 

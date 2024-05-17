@@ -7,15 +7,20 @@
     <title>Band Site</title>
 </head>
 <body>
-    <header class="header">
-        <a href="#bio"><img src="./assets/Logo/Logo-bandsite.svg" alt="logo" class="header__logo logo" /></a>
+    <header class="header"> 
         <nav class="header__navbar">
-            
-            <a href="#bio" class="subheader active">Biography</a>
-            
-            <a href="#shows" class="subheader font__silver">Shows</a></div>
-        
-        
+            <a href="#bio">
+                <img src="./assets/Logo/Logo-bandsite.svg" alt="logo" class="header__logo logo" />
+            </a>
+            <ul class="header__navbar--list">
+                <li>
+                    <a href="#bio" class="active">Biography</a>
+                </li>
+                <li>
+                    <a href="#shows" class="font__silver">Shows</a></div>
+                </li>
+            </ul>
+        </nav>
     </header>
     <main>
         <div id="bio">
@@ -85,6 +90,9 @@
         </div>
     </main>
     <footer class="footer font__white">
+        <section class="footer__logo">
+            <img src="./assets/Logo/Logo-bandsite.svg" alt="logo" class="logo" />
+        </section>
         <section class="footer__social">
             <h2 class="section-header">Get in Touch</h2>
             <div class="footer__social--icons">
@@ -116,9 +124,7 @@
                 </p>
             </section>
         </section>
-        <section class="footer__logo logo">
-            <img src="./assets/Logo/Logo-bandsite.svg" alt="logo" class="logo" />
-        </section>
+        
         <section class="footer__copyright">
             <p class="footer-copy">Copyright The Bees Knees © 2023 All Rights Reserved</p>
         </section>

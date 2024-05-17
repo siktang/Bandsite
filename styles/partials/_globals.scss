@@ -44,14 +44,40 @@ img {
 
     &__navbar {
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
+    justify-content: space-between;
 
-      a {
-        text-decoration: none;
-        padding-top: 0;
+      @media screen and (min-width: $tablet-breakpoint) {
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
       }
+
+      &--list {
+        display: flex;
+        justify-content: space-around;
+        list-style-type: none;
+
+        a {
+        text-decoration: none;
+        color: $primary-color-silver;
+        padding-top: 0;
+        font-size: 0.875rem;
+        font-weight: 400;
+        padding: 1rem;
+      
+          @media screen and (min-width:$tablet-breakpoint) {
+            font-size: 1.5rem;
+            line-height: 2rem;
+          }
+      
+        }
+      }
+      }
+
+      
     }
-  }
+  
 
 // rules for footer 
 
@@ -86,6 +112,8 @@ img {
     }
 
     &__contact-info {
+      margin-bottom: 3rem;
+
       @media screen and (min-width:$tablet-breakpoint) {
         display: flex;
         justify-content: space-between;
@@ -100,20 +128,19 @@ img {
     }
 
     &__logo {
-      position: relative;
-      top: 1rem;
+      position: absolute;
+      bottom: 1rem;
       left: 1rem;
-      margin-bottom: 1rem;
+      margin-bottom: 2rem;
       
       @media screen and (min-width:$tablet-breakpoint) {
         position: absolute;
-        top: 0;
-        right: 0;
-        margin: 1.5rem;
+        top: 3rem;
+        left: 80%;
       }  
       
-      @media screen and (min-width:$tablet-breakpoint) {
-        margin: 3rem;
+      @media screen and (min-width:$desktop-breakpoint) {
+       
       } 
     }
 
@@ -201,5 +228,4 @@ img {
     font-weight: 700;
     border-bottom: 4px;
   }
-
 

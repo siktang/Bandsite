@@ -106,16 +106,21 @@
 
     @media screen and (min-width: $tablet-breakpoint) {
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: space-evenly;
         flex-wrap: wrap;
-        row-gap: 1.5rem;
-        padding: 0 2.25rem 2.25rem 2.25rem;
+        margin: 1.5rem;
+    }
+
+    @media screen and (min-width: $desktop-breakpoint) {
+        margin: auto;
     }
 
     img {
         @media screen and (min-width: $tablet-breakpoint) {
+            margin: 0.75rem;
             padding: 0;
-            width: 29vw;
+            width: 30%;
+            max-width: 24rem;
         }
     }
 }

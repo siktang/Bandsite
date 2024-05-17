@@ -54,6 +54,9 @@ img {
   display: flex;
   justify-content: space-evenly;
 }
+.header__navbar a {
+  text-decoration: none;
+}
 
 .footer {
   text-align: left;
@@ -95,10 +98,9 @@ img {
   }
 }
 .footer__logo {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  margin: 1rem;
+  position: relative;
+  top: 1rem;
+  left: 1rem;
 }
 @media screen and (min-width: 768px) {
   .footer__logo {

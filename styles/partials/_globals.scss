@@ -44,6 +44,10 @@ img {
     &__navbar {
     display: flex;
     justify-content: space-evenly;
+
+      a {
+        text-decoration: none;
+      }
     }
   }
 
@@ -94,11 +98,9 @@ img {
     }
 
     &__logo {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      margin: 1rem;
-      
+      position: relative;
+      top: 1rem;
+      left: 1rem;
       
       @media screen and (min-width:$tablet-breakpoint) {
         position: absolute;

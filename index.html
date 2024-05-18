@@ -7,78 +7,92 @@
     <title>Band Site</title>
 </head>
 <body>
-    <header class="header">
-        <h1 class="logo font__white">BANDSITE</h1>
+    <header class="header"> 
         <nav class="header__navbar">
-            <a class="subheader font__white active">Biography</a>
-            <a class="subheader font__silver">Shows</a>
+            <a href="#bio">
+                <img src="./assets/Logo/Logo-bandsite.svg" alt="logo" class="header__logo logo" />
+            </a>
+            <ul class="header__navbar--list">
+                <li>
+                    <a href="#bio" class="active">Biography</a>
+                </li>
+                <li>
+                    <a href="#shows" class="font__silver">Shows</a></div>
+                </li>
+            </ul>
         </nav>
-        
     </header>
     <main>
-        <section class="hero">
-            <h2  class="hero__title font__white">The Bees Knees</h2>
-        </section>
-        <section class="headline">
-            <h2 class="headline__title section-header">About the Musicians</h2>
-            <img src="assets/Images/band.jpg" alt="band" class="headline__image"/>
-            <p class="subheader headline__article">
-                    “We push each other to be the best. It’s not
-                    uncommon for one of us to say ‘this needs
-                    to be better, back to the drawing board’”<br />
-                    - Lead vocalist of The Bees Knees</p>
-        </section>
-        <section class="about">
-            <h2 class="subheader about__title">
-                    The Bees Knees</h2>
-            <div class="about__article">
-                <p class="body-copy">
-                        The Bees Knees is a pop rock band originating
-                        from San Francisco, California. The band
-                        consists a dynamic lineup featuring two lead
-                        vocalists, two guitarists, a bassist, a
-                        keyboardist and a drummer. The band
-                        achieved its first commercial success as an
-                        unsigned act, drawing attention from their
-                        future manager. Having extensive experience
-                        working with both new and seasoned acts, the
-                        manager was confident the band could
-                        succeed even further with more support,
-                        pushing The Bees Knees to sign with a well
-                        known record label.
-                </p>
-                <p class="body-copy">
-                        From there, the band has soared, gaining
-                        international recognition and ranking in the
-                        top 10 on the Poster Charts. New fans
-                        immediately fell in love with the band’s original
-                        and organic attitude, solidifying their place as
-                        one of the hottest and fastest up and coming
-                        acts of this century. Fans affectionately refer to
-                        themselves as “The Hive” and are drawn to
-                        their candid and authentic performances on
-                        stage. Looking forward to touring in the future, The Bees Knees are currently recording
-                        their second studio album, looking to be
-                        released in early 2024.
-                </p>
-            </div>
-        </section>
-        <section class="gallery">
-            <h2 class="section-header">Photo Gallery</h2>
-            <div class="img-container">
-                <img src="assets/Images/Photo-gallery-1.jpg" alt="show1" />
-                <img src="assets/Images/Photo-gallery-2.jpg" alt="show2" />
-                <img src="assets/Images/Photo-gallery-3.jpg" alt="show3" />
-                <img src="assets/Images/Photo-gallery-4.jpg" alt="show4" />
-                <img src="assets/Images/Photo-gallery-5.jpg" alt="show5" />
-                <img src="assets/Images/Photo-gallery-6.jpg" alt="show6" />
-                <img src="assets/Images/Photo-gallery-7.jpg" alt="show7" />
-                <img src="assets/Images/Photo-gallery-8.jpg" alt="show8" />
-                <img src="assets/Images/Photo-gallery-9.jpg" alt="show9" />
-            </div>
-        </section>
+        <div id="bio">
+            <section class="hero">
+                <h2  class="hero__title font__white">The Bees Knees</h2>
+            </section>
+            <section class="headline">
+                <h2 class="headline__title section-header">About the Musicians</h2>
+                <img src="assets/Images/band.jpg" alt="band" class="headline__image"/>
+                <p class="headline__article">
+                        “We push each other to be the best. It’s not
+                        uncommon for one of us to say ‘this needs
+                        to be better, back to the drawing board’”</p>
+                <p class="headline__article--quotee">- Lead vocalist of The Bees Knees</p>
+            </section>
+            <section class="about">
+                <h2 class="subheader about__title">
+                        The Bees Knees</h2>
+                <div class="about__article">
+                    <p class="body-copy">
+                            The Bees Knees is a pop rock band originating
+                            from San Francisco, California. The band
+                            consists a dynamic lineup featuring two lead
+                            vocalists, two guitarists, a bassist, a
+                            keyboardist and a drummer. The band
+                            achieved its first commercial success as an
+                            unsigned act, drawing attention from their
+                            future manager. Having extensive experience
+                            working with both new and seasoned acts, the
+                            manager was confident the band could
+                            succeed even further with more support,
+                            pushing The Bees Knees to sign with a well
+                            known record label.
+                    </p>
+                    <p class="body-copy">
+                            From there, the band has soared, gaining
+                            international recognition and ranking in the
+                            top 10 on the Poster Charts. New fans
+                            immediately fell in love with the band’s original
+                            and organic attitude, solidifying their place as
+                            one of the hottest and fastest up and coming
+                            acts of this century. Fans affectionately refer to
+                            themselves as “The Hive” and are drawn to
+                            their candid and authentic performances on
+                            stage. Looking forward to touring in the future, The Bees Knees are currently recording
+                            their second studio album, looking to be
+                            released in early 2024.
+                    </p>
+                </div>
+            </section>
+        </div>
+        <div id="shows">
+            <section class="gallery">
+                <h2 class="section-header">Photo Gallery</h2>
+                <div class="img-container">
+                    <img src="assets/Images/Photo-gallery-1.jpg" alt="show1" />
+                    <img src="assets/Images/Photo-gallery-2.jpg" alt="show2" />
+                    <img src="assets/Images/Photo-gallery-3.jpg" alt="show3" />
+                    <img src="assets/Images/Photo-gallery-4.jpg" alt="show4" />
+                    <img src="assets/Images/Photo-gallery-5.jpg" alt="show5" />
+                    <img src="assets/Images/Photo-gallery-6.jpg" alt="show6" />
+                    <img src="assets/Images/Photo-gallery-7.jpg" alt="show7" />
+                    <img src="assets/Images/Photo-gallery-8.jpg" alt="show8" />
+                    <img src="assets/Images/Photo-gallery-9.jpg" alt="show9" />
+                </div>
+            </section>
+        </div>
     </main>
     <footer class="footer font__white">
+        <section class="footer__logo">
+            <img src="./assets/Logo/Logo-bandsite.svg" alt="logo" class="logo" />
+        </section>
         <section class="footer__social">
             <h2 class="section-header">Get in Touch</h2>
             <div class="footer__social--icons">
@@ -87,7 +101,7 @@
                 <img src="assets/Icons/SVG/Icon-twitter.svg" alt="twitter" />
             </div>
         </section>
-        <div class="footer__contact-info">
+        <section class="footer__contact-info">
             <section class="address">
                 <h3 class="subheader">The Bees Knees Management</h3>
                 <p class="body-copy">503 Broadway Penthouse, <br/> 
@@ -109,10 +123,8 @@
                 <p class="body-copy"> bookings@limitlessag.com
                 </p>
             </section>
-        </div>
-        <section class="footer__logo">
-            <h3 class="logo">BANDSITE</h3>
         </section>
+        
         <section class="footer__copyright">
             <p class="footer-copy">Copyright The Bees Knees © 2023 All Rights Reserved</p>
         </section>

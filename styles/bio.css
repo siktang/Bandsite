@@ -1,15 +1,15 @@
 @font-face {
   font-family: "Avenir";
-  src: url(../../assets/Font/AvenirNextLTPro-Regular.otf) format("otf");
+  src: url(../../assets/Font/AvenirNextLTPro-Regular.otf) format("otf"), url(../../assets/Font/Alternative\ files/AvenirNextLTPro.ttf) format("ttf");
 }
 @font-face {
   font-family: "Avenir";
-  src: url(../../assets/Font/AvenirNextLTPro-Bold.otf) format("otf");
+  src: url(../../assets/Font/AvenirNextLTPro-Bold.otf) format("otf"), url(../../assets/Font/Alternative\ files/AvenirNextLTProBold.ttf) format("ttf");
   font-weight: 700;
 }
 @font-face {
   font-family: "Avenir";
-  src: url(../../assets/Font/AvenirNextLTPro-Demi.otf) format("otf");
+  src: url(../../assets/Font/AvenirNextLTPro-Demi.otf) format("otf"), url(../../assets/Font/Alternative\ files/AvenirNextLTProDemi.ttf) format("ttf");
   font-weight: 600;
 }
 * {
@@ -25,43 +25,67 @@ img {
 }
 
 .logo {
-  font-size: 1.5rem;
-  font-weight: 400;
-  line-height: 2rem;
-  padding: 1rem;
-  font-weight: 400;
+  height: 1.5rem;
+  width: 7.5rem;
+  padding: 0;
 }
 
 .header {
+  width: 100vw;
   text-align: center;
   background-color: #323232;
 }
 @media screen and (min-width: 768px) {
   .header {
+    position: fixed;
     display: flex;
     align-items: center;
   }
 }
 @media screen and (min-width: 1280px) {
   .header {
-    display: flex;
-    align-items: center;
     padding-left: 5rem;
   }
 }
+.header__logo {
+  margin: 1rem;
+}
 .header__navbar {
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: column;
+  justify-content: space-between;
+}
+@media screen and (min-width: 768px) {
+  .header__navbar {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
+.header__navbar--list {
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+}
+.header__navbar--list a {
+  text-decoration: none;
+  color: #AFAFAF;
+  padding-top: 0;
+  font-size: 0.875rem;
+  font-weight: 400;
+  padding: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .header__navbar--list a {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
 }
 
 .footer {
   text-align: left;
   background-color: #323232;
-}
-@media screen and (min-width: 768px) {
-  .footer {
-    position: relative;
-  }
+  position: relative;
 }
 @media screen and (min-width: 768px) {
   .footer__social {
@@ -72,7 +96,7 @@ img {
 .footer__social--icons {
   display: flex;
   justify-content: space-between;
-  width: 30vw;
+  width: 10rem;
 }
 @media screen and (min-width: 768px) {
   .footer__social--icons {
@@ -83,6 +107,9 @@ img {
   width: auto;
   height: auto;
 }
+.footer__contact-info {
+  margin-bottom: 3rem;
+}
 @media screen and (min-width: 768px) {
   .footer__contact-info {
     display: flex;
@@ -91,17 +118,33 @@ img {
     padding-right: 1.25rem;
   }
 }
+@media screen and (min-width: 1280px) {
+  .footer__contact-info {
+    padding-left: 4rem;
+    width: 80vw;
+  }
+}
+.footer__logo {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  margin-bottom: 2rem;
+}
 @media screen and (min-width: 768px) {
   .footer__logo {
     position: absolute;
-    top: 0;
-    right: 0;
-    margin: 1rem;
+    top: 3rem;
+    left: 80%;
   }
 }
 @media screen and (min-width: 768px) {
   .footer__copyright {
     padding: 1.25rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .footer__copyright {
+    padding: 2rem 4rem 2rem 4rem;
   }
 }
 
@@ -134,7 +177,7 @@ img {
 
 .subheader {
   font-size: 0.875rem;
-  font-weight: 400;
+  font-weight: 600;
   padding: 1rem;
 }
 @media screen and (min-width: 768px) {
@@ -156,15 +199,17 @@ img {
   }
 }
 
-.active {
-  border-bottom: 4px;
-}
-
 .font__white {
   color: #FFFFFF;
 }
 .font__silver {
   color: #AFAFAF;
+}
+
+.active {
+  color: #FFFFFF;
+  font-weight: 700;
+  border-bottom: 4px;
 }
 
 .hero {
@@ -173,7 +218,8 @@ img {
   align-items: center;
   background: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url(../assets/Images/hero-bio.jpg);
   background-size: cover;
-  height: 16rem;
+  height: 50vh;
+  scroll-margin-top: 2rem;
 }
 @media screen and (min-width: 768px) {
   .hero {
@@ -211,6 +257,19 @@ img {
     padding: 3rem 5rem 2.25rem 5rem;
   }
 }
+.headline__image {
+  padding-bottom: 0;
+}
+.headline__article {
+  font-size: 0.875rem;
+  font-weight: 700;
+  padding: 1rem 1rem 0.5rem 1rem;
+}
+.headline__article--quotee {
+  font-size: 0.875rem;
+  font-weight: 700;
+  padding: 0 1rem 1rem 1rem;
+}
 @media screen and (min-width: 768px) {
   .headline__image, .headline__article {
     width: 75vw;
@@ -246,15 +305,21 @@ img {
 @media screen and (min-width: 768px) {
   .img-container {
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
-    row-gap: 1.5rem;
-    padding: 0 2.25rem 2.25rem 2.25rem;
+    margin: 1.5rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .img-container {
+    margin: auto;
   }
 }
 @media screen and (min-width: 768px) {
   .img-container img {
+    margin: 0.75rem;
     padding: 0;
-    width: 29vw;
+    width: 30%;
+    max-width: 24rem;
   }
 }/*# sourceMappingURL=bio.css.map */

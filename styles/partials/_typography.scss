@@ -1,17 +1,17 @@
 @font-face {
     font-family: 'Avenir';
-    src: url(../../assets/Font/AvenirNextLTPro-Regular.otf) format('otf');
+    src: url(../../assets/Font/AvenirNextLTPro-Regular.otf) format('otf'), url(../../assets/Font/Alternative\ files/AvenirNextLTPro.ttf) format('ttf');
 }
 
 @font-face {
     font-family: 'Avenir';
-    src: url(../../assets/Font/AvenirNextLTPro-Bold.otf) format('otf');
+    src: url(../../assets/Font/AvenirNextLTPro-Bold.otf) format('otf'), url(../../assets/Font/Alternative\ files/AvenirNextLTProBold.ttf) format('ttf');
     font-weight: 700;
 }
 
 @font-face {
     font-family: 'Avenir';
-    src: url(../../assets/Font/AvenirNextLTPro-Demi.otf) format('otf');
+    src: url(../../assets/Font/AvenirNextLTPro-Demi.otf) format('otf'), url(../../assets/Font/Alternative\ files/AvenirNextLTProDemi.ttf) format('ttf');
     font-weight: 600;
 }
 

@@ -126,11 +126,27 @@ img {
     position: relative;
     padding-top: 1rem;
 
+    @media screen and (min-width:$tablet-breakpoint) {
+      > div {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        padding-top: 1.5rem;
+        padding-bottom: 1rem;
+        margin-left: 2.25rem;
+        margin-right: 2.25rem;
+      }
+    }  
+
     &__social {
      
       @media screen and (min-width:$tablet-breakpoint) {
         display: flex;
         align-items: center;
+
+        h2 {
+          padding: 0;
+        }
       }  
 
       &--icons {
@@ -182,20 +198,23 @@ img {
       }
     }
 
-    &__logo {
+    &__logo1 {
       position: absolute;
       bottom: 1rem;
       left: 1rem;
       margin-bottom: 2rem;
       
       @media screen and (min-width:$tablet-breakpoint) {
-        position: absolute;
-        top: 3.75rem;
-        left: 80%;
+        display: none;
       }  
       
-      @media screen and (min-width:$desktop-breakpoint) {
-       
+    }
+
+    &__logo2 {
+      display: none;
+
+      @media screen and (min-width:$tablet-breakpoint) {
+        display: block;
       } 
     }
 

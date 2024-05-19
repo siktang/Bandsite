@@ -128,9 +128,23 @@ img {
   padding-top: 1rem;
 }
 @media screen and (min-width: 768px) {
+  .footer > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-top: 1.5rem;
+    padding-bottom: 1rem;
+    margin-left: 2.25rem;
+    margin-right: 2.25rem;
+  }
+}
+@media screen and (min-width: 768px) {
   .footer__social {
     display: flex;
     align-items: center;
+  }
+  .footer__social h2 {
+    padding: 0;
   }
 }
 .footer__social--icons {
@@ -178,17 +192,23 @@ img {
 .footer__contact-info .body-copy {
   padding: 0.5rem 1rem 0.5rem 1rem;
 }
-.footer__logo {
+.footer__logo1 {
   position: absolute;
   bottom: 1rem;
   left: 1rem;
   margin-bottom: 2rem;
 }
 @media screen and (min-width: 768px) {
-  .footer__logo {
-    position: absolute;
-    top: 3.75rem;
-    left: 80%;
+  .footer__logo1 {
+    display: none;
+  }
+}
+.footer__logo2 {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .footer__logo2 {
+    display: block;
   }
 }
 @media screen and (min-width: 768px) {

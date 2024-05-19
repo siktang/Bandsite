@@ -2,6 +2,10 @@
 @use './variables' as *;
 
 // General rules
+html {
+  height: 100%;
+}
+
 * {
     box-sizing: border-box;
     padding: 0px;
@@ -15,7 +19,7 @@ img {
 }
 
 .logo {
-  height: 1.5rem;
+  height: 1.25rem;
   width: 7.5rem;
   padding: 0;
 }
@@ -23,7 +27,8 @@ img {
 // Rules for header
 
   .header {
-    
+    position: sticky;
+    top: 0;
     width: 100vw;
     text-align: center;
     background-color: $primary-color-black;
@@ -40,6 +45,10 @@ img {
 
     &__logo {
       margin: 1rem 1rem 0.25rem 1rem;
+
+      @media screen and (min-width: $tablet-breakpoint) {
+        margin: 1.5rem 2.25rem 1rem 2.25rem;
+      }
     }
 
     &__navbar {
@@ -58,18 +67,38 @@ img {
         justify-content: space-around;
         list-style-type: none;
 
+        @media screen and (min-width: $tablet-breakpoint) {
+          padding-top: 0.5rem;
+        }
+
         li {
           width: 50vw;
           padding-bottom: 0.5rem;
+
+          @media screen and (min-width: $tablet-breakpoint) {
+            width: auto;
+          }
         }
         
         .active {
           border-bottom: 0.25rem solid;
           border-color: $primary-color-white;
 
+          @media screen and (min-width: $tablet-breakpoint) {
+            border: none;
+          }
+
           a {
           color: $primary-color-white;
-          font-weight: 700;}
+          font-weight: 700;
+            
+          @media screen and (min-width: $tablet-breakpoint) {
+            text-decoration: underline;
+            text-decoration-color: $primary-color-white;
+            text-decoration-thickness: 0.25rem;
+            text-underline-offset: 1.5rem;
+          }
+        }
         }
 
         a {
@@ -78,11 +107,6 @@ img {
         padding: 0 1rem 1rem 1rem;
         font-size: 0.875rem;
         font-weight: 400;
-      
-          @media screen and (min-width:$tablet-breakpoint) {
-            font-size: 1.5rem;
-            line-height: 2rem;
-          }
       
         }
 
@@ -145,7 +169,11 @@ img {
       @media screen and (min-width:$desktop-breakpoint) {
         padding-left: 4rem;
         width: 80vw;
-      }  
+      }
+      
+      .body-copy {
+        padding: 0.5rem 1rem 0.5rem 1rem;
+      }
     }
 
     &__logo {

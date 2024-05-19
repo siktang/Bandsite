@@ -39,7 +39,7 @@ img {
     }
 
     &__logo {
-      margin: 1rem;
+      margin: 1rem 1rem 0.25rem 1rem;
     }
 
     &__navbar {
@@ -58,13 +58,26 @@ img {
         justify-content: space-around;
         list-style-type: none;
 
+        li {
+          width: 50vw;
+          padding-bottom: 0.5rem;
+        }
+        
+        .active {
+          border-bottom: 0.25rem solid;
+          border-color: $primary-color-white;
+
+          a {
+          color: $primary-color-white;
+          font-weight: 700;}
+        }
+
         a {
         text-decoration: none;
         color: $primary-color-silver;
-        padding-top: 0;
+        padding: 0 1rem 1rem 1rem;
         font-size: 0.875rem;
         font-weight: 400;
-        padding: 1rem;
       
           @media screen and (min-width:$tablet-breakpoint) {
             font-size: 1.5rem;
@@ -72,6 +85,8 @@ img {
           }
       
         }
+
+        
       }
       }
 
@@ -229,9 +244,4 @@ img {
     }
   }
 
-  .active {
-    color: $primary-color-white;
-    font-weight: 700;
-    border-bottom: 4px;
-  }
 

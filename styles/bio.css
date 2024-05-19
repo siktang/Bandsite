@@ -48,7 +48,7 @@ img {
   }
 }
 .header__logo {
-  margin: 1rem;
+  margin: 1rem 1rem 0.25rem 1rem;
 }
 .header__navbar {
   display: flex;
@@ -67,13 +67,24 @@ img {
   justify-content: space-around;
   list-style-type: none;
 }
+.header__navbar--list li {
+  width: 50vw;
+  padding-bottom: 0.5rem;
+}
+.header__navbar--list .active {
+  border-bottom: 0.25rem solid;
+  border-color: #FFFFFF;
+}
+.header__navbar--list .active a {
+  color: #FFFFFF;
+  font-weight: 700;
+}
 .header__navbar--list a {
   text-decoration: none;
   color: #AFAFAF;
-  padding-top: 0;
+  padding: 0 1rem 1rem 1rem;
   font-size: 0.875rem;
   font-weight: 400;
-  padding: 1rem;
 }
 @media screen and (min-width: 768px) {
   .header__navbar--list a {
@@ -211,12 +222,6 @@ img {
 }
 .font__silver {
   color: #AFAFAF;
-}
-
-.active {
-  color: #FFFFFF;
-  font-weight: 700;
-  border-bottom: 4px;
 }
 
 .hero {

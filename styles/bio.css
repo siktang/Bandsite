@@ -12,6 +12,10 @@
   src: url(../../assets/Font/AvenirNextLTPro-Demi.otf) format("otf"), url(../../assets/Font/Alternative\ files/AvenirNextLTProDemi.ttf) format("ttf");
   font-weight: 600;
 }
+html {
+  height: 100%;
+}
+
 * {
   box-sizing: border-box;
   padding: 0px;
@@ -25,12 +29,14 @@ img {
 }
 
 .logo {
-  height: 1.5rem;
+  height: 1.25rem;
   width: 7.5rem;
   padding: 0;
 }
 
 .header {
+  position: sticky;
+  top: 0;
   width: 100vw;
   text-align: center;
   background-color: #323232;
@@ -44,11 +50,16 @@ img {
 }
 @media screen and (min-width: 1280px) {
   .header {
-    padding-left: 5rem;
+    padding-left: 4rem;
   }
 }
 .header__logo {
-  margin: 1rem;
+  margin: 1rem 1rem 0.25rem 1rem;
+}
+@media screen and (min-width: 768px) {
+  .header__logo {
+    margin: 1.5rem 2.25rem 1rem 2.25rem;
+  }
 }
 .header__navbar {
   display: flex;
@@ -67,25 +78,54 @@ img {
   justify-content: space-around;
   list-style-type: none;
 }
+@media screen and (min-width: 768px) {
+  .header__navbar--list {
+    padding-top: 0.5rem;
+  }
+}
+.header__navbar--list li {
+  width: 50vw;
+  padding-bottom: 0.5rem;
+}
+@media screen and (min-width: 768px) {
+  .header__navbar--list li {
+    width: auto;
+  }
+}
+.header__navbar--list .active {
+  border-bottom: 0.25rem solid;
+  border-color: #FFFFFF;
+}
+@media screen and (min-width: 768px) {
+  .header__navbar--list .active {
+    border: none;
+  }
+}
+.header__navbar--list .active a {
+  color: #FFFFFF;
+  font-weight: 700;
+}
+@media screen and (min-width: 768px) {
+  .header__navbar--list .active a {
+    text-decoration: underline;
+    text-decoration-color: #FFFFFF;
+    text-decoration-thickness: 0.25rem;
+    text-underline-offset: 1.5rem;
+  }
+}
 .header__navbar--list a {
   text-decoration: none;
   color: #AFAFAF;
-  padding-top: 0;
+  padding: 0 1rem 1rem 1rem;
   font-size: 0.875rem;
   font-weight: 400;
-  padding: 1rem;
-}
-@media screen and (min-width: 768px) {
-  .header__navbar--list a {
-    font-size: 1.5rem;
-    line-height: 2rem;
-  }
 }
 
 .footer {
   text-align: left;
   background-color: #323232;
   position: relative;
+  padding-top: 1rem;
 }
 @media screen and (min-width: 768px) {
   .footer__social {
@@ -95,7 +135,7 @@ img {
 }
 .footer__social--icons {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   width: 10rem;
 }
 @media screen and (min-width: 768px) {
@@ -107,6 +147,13 @@ img {
   width: auto;
   height: auto;
 }
+@media screen and (min-width: 768px) {
+  .footer__social--icons img {
+    width: 3rem;
+    height: 1.75rem;
+    padding: 0;
+  }
+}
 .footer__contact-info {
   margin-bottom: 3rem;
 }
@@ -116,6 +163,7 @@ img {
     justify-content: space-between;
     padding-left: 1.25rem;
     padding-right: 1.25rem;
+    margin-bottom: 0;
   }
 }
 @media screen and (min-width: 1280px) {
@@ -123,6 +171,12 @@ img {
     padding-left: 4rem;
     width: 80vw;
   }
+}
+.footer__contact-info .subheader {
+  font-size: 0.875rem;
+}
+.footer__contact-info .body-copy {
+  padding: 0.5rem 1rem 0.5rem 1rem;
 }
 .footer__logo {
   position: absolute;
@@ -133,7 +187,7 @@ img {
 @media screen and (min-width: 768px) {
   .footer__logo {
     position: absolute;
-    top: 3rem;
+    top: 3.75rem;
     left: 80%;
   }
 }
@@ -206,24 +260,17 @@ img {
   color: #AFAFAF;
 }
 
-.active {
-  color: #FFFFFF;
-  font-weight: 700;
-  border-bottom: 4px;
-}
-
 .hero {
   display: flex;
   justify-content: left;
   align-items: center;
   background: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url(../assets/Images/hero-bio.jpg);
   background-size: cover;
-  height: 50vh;
-  scroll-margin-top: 2rem;
+  height: 35vh;
 }
 @media screen and (min-width: 768px) {
   .hero {
-    height: 30rem;
+    height: 80vh;
   }
 }
 .hero__title {
@@ -236,6 +283,7 @@ img {
   .hero__title {
     font-size: 3.75rem;
     line-height: 4.25rem;
+    margin-left: 1.25rem;
   }
 }
 @media screen and (min-width: 1280px) {
@@ -260,18 +308,24 @@ img {
 .headline__image {
   padding-bottom: 0;
 }
-.headline__article {
+.headline__quote {
   font-size: 0.875rem;
   font-weight: 700;
   padding: 1rem 1rem 0.5rem 1rem;
 }
-.headline__article--quotee {
+@media screen and (min-width: 768px) {
+  .headline__quote {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+}
+.headline__quotee {
   font-size: 0.875rem;
   font-weight: 700;
   padding: 0 1rem 1rem 1rem;
 }
 @media screen and (min-width: 768px) {
-  .headline__image, .headline__article {
+  .headline__image, .headline__quote, .headline__quotee {
     width: 75vw;
     display: block;
     margin-left: auto;
@@ -296,30 +350,39 @@ img {
   }
 }
 
-.img-container {
+.gallery {
+  background-color: #FAFAFA;
+  padding-top: 1.75rem;
+}
+@media screen and (min-width: 768px) {
+  .gallery {
+    padding-bottom: 1.75rem;
+  }
+}
+.gallery__img-container {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
 }
 @media screen and (min-width: 768px) {
-  .img-container {
+  .gallery__img-container {
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
-    margin: 1.5rem;
+    margin: 0 1.5rem 0 1.5rem;
   }
 }
 @media screen and (min-width: 1280px) {
-  .img-container {
+  .gallery__img-container {
+    max-width: 63.75rem;
     margin: auto;
   }
 }
 @media screen and (min-width: 768px) {
-  .img-container img {
+  .gallery__img-container img {
     margin: 0.75rem;
     padding: 0;
     width: 30%;
-    max-width: 24rem;
   }
 }/*# sourceMappingURL=bio.css.map */

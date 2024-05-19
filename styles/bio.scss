@@ -9,11 +9,10 @@
     align-items: center;
     background: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url(../assets/Images/hero-bio.jpg);
     background-size: cover;
-    height: 50vh;
-    scroll-margin-top: 2rem;
+    height: 35vh;
 
     @media screen and (min-width: $tablet-breakpoint) {
-        height: 30rem;
+        height: 80vh;
     }
 
     &__title {
@@ -25,6 +24,7 @@
         @media screen and (min-width:$tablet-breakpoint) {
             font-size: 3.75rem;
             line-height: 4.25rem;
+            margin-left: 1.25rem
         }
 
         @media screen and (min-width:$desktop-breakpoint) {
@@ -52,19 +52,25 @@
             padding-bottom: 0;
         }
 
-    &__article {
+    &__quote {
         font-size: 0.875rem;
         font-weight: 700;
         padding: 1rem 1rem 0.5rem 1rem;
-
-        &--quotee {
-            font-size: 0.875rem;
-            font-weight: 700;
-            padding: 0 1rem 1rem 1rem;
+    
+        @media screen and (min-width:$tablet-breakpoint) {
+            font-size: 1.5rem;
+            font-weight: 600;
         }
     }
+
+    &__quotee {
+        font-size: 0.875rem;
+        font-weight: 700;
+        padding: 0 1rem 1rem 1rem;
+    }
     
-        &__image, &__article {
+    
+    &__image, &__quote, &__quotee {
         @media screen and (min-width:$tablet-breakpoint) {
             width: 75vw;
             display: block;
@@ -98,29 +104,39 @@
     }
 }
 
-.img-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
+
+.gallery {
+    background-color: $secondary-color-white;
+    padding-top: 1.75rem;
 
     @media screen and (min-width: $tablet-breakpoint) {
-        flex-direction: row;
-        justify-content: center;
-        flex-wrap: wrap;
-        margin: 1.5rem;
+        padding-bottom: 1.75rem;
     }
 
-    @media screen and (min-width: $desktop-breakpoint) {
-        margin: auto;
-    }
+    &__img-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
 
-    img {
         @media screen and (min-width: $tablet-breakpoint) {
-            margin: 0.75rem;
-            padding: 0;
-            width: 30%;
-            max-width: 24rem;
+            flex-direction: row;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 0 1.5rem 0 1.5rem;
+        }
+
+        @media screen and (min-width: $desktop-breakpoint) {
+            max-width: 63.75rem;
+            margin: auto;
+        }
+
+        img {
+            @media screen and (min-width: $tablet-breakpoint) {
+                margin: 0.75rem;
+                padding: 0;
+                width: 30%;
+            }
         }
     }
 }

@@ -50,7 +50,7 @@ img {
 }
 @media screen and (min-width: 1280px) {
   .header {
-    padding-left: 5rem;
+    padding-left: 4rem;
   }
 }
 .header__logo {
@@ -267,11 +267,10 @@ img {
   background: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url(../assets/Images/hero-bio.jpg);
   background-size: cover;
   height: 35vh;
-  scroll-margin-top: 2rem;
 }
 @media screen and (min-width: 768px) {
   .hero {
-    height: 70vh;
+    height: 80vh;
   }
 }
 .hero__title {

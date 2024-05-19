@@ -53,19 +53,25 @@
             padding-bottom: 0;
         }
 
-    &__article {
+    &__quote {
         font-size: 0.875rem;
         font-weight: 700;
         padding: 1rem 1rem 0.5rem 1rem;
-
-        &--quotee {
-            font-size: 0.875rem;
-            font-weight: 700;
-            padding: 0 1rem 1rem 1rem;
+    
+        @media screen and (min-width:$tablet-breakpoint) {
+            font-size: 1.5rem;
+            font-weight: 600;
         }
     }
+
+    &__quotee {
+        font-size: 0.875rem;
+        font-weight: 700;
+        padding: 0 1rem 1rem 1rem;
+    }
     
-        &__image, &__article, &__article--quotee {
+    
+    &__image, &__quote, &__quotee {
         @media screen and (min-width:$tablet-breakpoint) {
             width: 75vw;
             display: block;

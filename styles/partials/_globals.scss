@@ -124,6 +124,7 @@ img {
     text-align: left;
     background-color: $primary-color-black;
     position: relative;
+    padding-top: 1rem;
 
     &__social {
      
@@ -164,11 +165,16 @@ img {
         justify-content: space-between;
         padding-left: 1.25rem;
         padding-right: 1.25rem;
+        margin-bottom: 0;
       }  
 
       @media screen and (min-width:$desktop-breakpoint) {
         padding-left: 4rem;
         width: 80vw;
+      }
+
+      .subheader {
+        font-size: 0.875rem;
       }
       
       .body-copy {
@@ -184,7 +190,7 @@ img {
       
       @media screen and (min-width:$tablet-breakpoint) {
         position: absolute;
-        top: 3rem;
+        top: 3.75rem;
         left: 80%;
       }  
       

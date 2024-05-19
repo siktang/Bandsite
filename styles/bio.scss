@@ -25,6 +25,7 @@
         @media screen and (min-width:$tablet-breakpoint) {
             font-size: 3.75rem;
             line-height: 4.25rem;
+            margin-left: 1.25rem
         }
 
         @media screen and (min-width:$desktop-breakpoint) {
@@ -64,7 +65,7 @@
         }
     }
     
-        &__image, &__article {
+        &__image, &__article, &__article--quotee {
         @media screen and (min-width:$tablet-breakpoint) {
             width: 75vw;
             display: block;
@@ -98,29 +99,36 @@
     }
 }
 
-.img-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
 
-    @media screen and (min-width: $tablet-breakpoint) {
-        flex-direction: row;
-        justify-content: center;
-        flex-wrap: wrap;
-        margin: 1.5rem;
-    }
+.gallery {
+    background-color: $secondary-color-white;
+    padding-top: 1.75rem;
+    padding-bottom: 1.75rem;
 
-    @media screen and (min-width: $desktop-breakpoint) {
-        margin: auto;
-    }
+        &__img-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
 
-    img {
-        @media screen and (min-width: $tablet-breakpoint) {
-            margin: 0.75rem;
-            padding: 0;
-            width: 30%;
-            max-width: 24rem;
+            @media screen and (min-width: $tablet-breakpoint) {
+                flex-direction: row;
+                justify-content: center;
+                flex-wrap: wrap;
+                margin: 0 1.5rem 0 1.5rem;
+            }
+
+            @media screen and (min-width: $desktop-breakpoint) {
+                max-width: 63.75rem;
+                margin: auto;
+            }
+
+        img {
+            @media screen and (min-width: $tablet-breakpoint) {
+                margin: 0.75rem;
+                padding: 0;
+                width: 30%;
+            }
         }
     }
 }

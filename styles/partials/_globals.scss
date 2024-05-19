@@ -95,7 +95,7 @@ img {
 
       &--icons {
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-start;
         width: 10rem;
       
         @media screen and (min-width:$tablet-breakpoint) {
@@ -105,6 +105,12 @@ img {
         img {
           width: auto;
           height: auto;
+
+          @media screen and (min-width:$tablet-breakpoint) {
+            width: 3rem;
+            height: 1.75rem;
+            padding: 0;
+          }
         }
       }
       

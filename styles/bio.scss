@@ -28,7 +28,10 @@
         }
 
         @media screen and (min-width:$desktop-breakpoint) {
-        padding: 5rem;
+            width: $desktop-element-width;
+            padding: 0;
+            margin-left: auto;
+            margin-right: auto;
         }
         }
 
@@ -44,19 +47,43 @@
         }
 
         @media screen and (min-width: $desktop-breakpoint) {
-                padding: 3rem 5rem 2.25rem 5rem;
+            padding-left: 0;
+            width: $desktop-element-width;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}
+
+.about {
+    padding-bottom: 1.75rem;
+
+    @media screen and (min-width:$tablet-breakpoint) {
+        display: flex;
+        flex-direction: column;
+        width: 75vw;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    @media screen and (min-width:$desktop-breakpoint) {
+        width: 55.313rem;
+
+        &__image {
+            max-width: $desktop-element-width;
         }
     }
 
+
     &__image {
-            padding-bottom: 0;
-        }
+        padding-bottom: 0;
+    }
 
     &__quote {
         font-size: 0.875rem;
         font-weight: 700;
         padding: 1rem 1rem 0.5rem 1rem;
-    
+
         @media screen and (min-width:$tablet-breakpoint) {
             font-size: 1.5rem;
             font-weight: 600;
@@ -68,8 +95,8 @@
         font-weight: 700;
         padding: 0 1rem 1rem 1rem;
     }
-    
-    
+
+
     &__image, &__quote, &__quotee {
         @media screen and (min-width:$tablet-breakpoint) {
             width: 75vw;
@@ -77,27 +104,32 @@
             margin-left: auto;
             margin-right: auto;
         }
+
+        @media screen and (min-width: $desktop-breakpoint) {
+            width: 55.313rem;
+        }
     }
 
-    
-
-}
-
-.about {
-
-    &__title {
+    &__title, &__article {
         @media screen and (min-width: $tablet-breakpoint) {
             width: 75vw;
             margin-left: auto;
             margin-right: auto;
+            padding-left: 1rem;
+            padding-right: 1rem;
         }
     }
 
     &__article {
         @media screen and (min-width: $tablet-breakpoint) {
             display: flex;
-            justify-content: space-evenly;
-            width: 75vw;
+            justify-content: space-evenly;            
+        }
+    }
+
+    &__title, &__article {
+        @media screen and (min-width: $desktop-breakpoint) {
+            width: 55.313rem;
             margin-left: auto;
             margin-right: auto;
         }
@@ -113,6 +145,12 @@
         padding-bottom: 1.75rem;
     }
 
+    h2 {
+        @media screen and (min-width: $desktop-breakpoint) {
+            padding: 0;
+        }
+    }
+
     &__img-container {
         display: flex;
         flex-direction: column;
@@ -126,11 +164,6 @@
             margin: 0 1.5rem 0 1.5rem;
         }
 
-        @media screen and (min-width: $desktop-breakpoint) {
-            max-width: 63.75rem;
-            margin: auto;
-        }
-
         img {
             @media screen and (min-width: $tablet-breakpoint) {
                 margin: 0.75rem;
@@ -139,4 +172,12 @@
             }
         }
     }
+
+    h2, &__img-container {
+        @media screen and (min-width: $desktop-breakpoint) {
+           width: $desktop-element-width;
+           margin-left: auto;
+           margin-right: auto;
+       }
+   }
 }

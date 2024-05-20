@@ -132,16 +132,29 @@ img {
     position: relative;
     padding-top: 1rem;
 
+    .footer-items {
+      @media screen and (min-width:$tablet-breakpoint) {
+        display: flex;
+        flex-direction: column;
+        width: auto;
+        margin-left: 2.25rem;
+        margin-right: 2.25rem;
+      }
+
+      @media screen and (min-width:$desktop-breakpoint) {
+        width: $desktop-element-width;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+
     .social-and-logo {
         display: flex;
         justify-content: space-between;
         align-items: baseline;
         padding-top: 1.5rem;
         padding-bottom: 1rem;
-        margin-left: 2.25rem;
-        margin-right: 2.25rem;
       }
-    }
 
     &__social {
      
@@ -156,9 +169,12 @@ img {
 
       &--icons {
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         width: 15rem;
       
+        @media screen and (min-width:$tablet-breakpoint) {
+          justify-content: center;
+        }
 
         img {
           width: auto;
@@ -181,8 +197,6 @@ img {
       @media screen and (min-width:$tablet-breakpoint) {
         display: flex;
         justify-content: space-between;
-        padding-left: 1.25rem;
-        padding-right: 1.25rem;
         margin-bottom: 0;
       }  
 
@@ -191,14 +205,26 @@ img {
       }
       
       .body-copy {
-        padding: 0.5rem 1rem 0.5rem 1rem;
+        padding: 0.5rem 1rem 0.5rem 1rem; 
+
+        @media screen and (min-width:$tablet-breakpoint) {
+          padding: 0.5rem 0 0.5rem 0; 
+        }
       }
 
+      @media screen and (min-width:$desktop-breakpoint) {
+        width: 75%;
+      }
+    }
+
+    &__copyright {
+      padding-top: 1rem;
+      padding-bottom: 2rem;
     }
 
     &__logo1 {
       position: absolute;
-      bottom: 1rem;
+      bottom: 2.5rem;
       left: 1rem;
       margin-bottom: 2rem;
       
@@ -216,35 +242,8 @@ img {
       } 
     }
 
-    &__copyright {
-      @media screen and (min-width:$tablet-breakpoint) {
-        padding: 1.25rem;
-        }
-      }
+  }
 
-
-    .footer-items {
-      @media screen and (min-width:$tablet-breakpoint) {
-        display: flex;
-        width: $desktop-element-width;
-        flex-direction: column;
-        margin-left: auto;
-        margin-right: auto;
-      }
-    }
-
-    @media screen and (min-width:$desktop-breakpoint) {
-      .social-and-logo, &__copyright {
-        width: $desktop-element-width;
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .social-and-logo,  &__copyright, .subheader, .body-copy, .footer-copy {
-        padding-left: 0;
-      }
-      
-      }
 
 
 .address, .agent1, .agent2 {
@@ -287,6 +286,7 @@ img {
     @media screen and (min-width:$tablet-breakpoint) {
       font-size: 1.5rem;
       line-height: 2rem;
+      padding-left: 0;
     }
 
   }
@@ -299,6 +299,7 @@ img {
     @media screen and (min-width:$tablet-breakpoint) {
       font-size: 0.875rem;
       line-height: 1.375rem;
+      padding-left: 0;
     }
   }
 

@@ -28,7 +28,10 @@
         }
 
         @media screen and (min-width:$desktop-breakpoint) {
-        padding: 5rem;
+            width: $desktop-element-width;
+            padding: 0;
+            margin-left: auto;
+            margin-right: auto;
         }
         }
 
@@ -44,7 +47,10 @@
         }
 
         @media screen and (min-width: $desktop-breakpoint) {
-                padding: 3rem 5rem 2.25rem 5rem;
+            padding-left: 0;
+            width: $desktop-element-width;
+            margin-left: auto;
+            margin-right: auto;
         }
     }
 
@@ -77,6 +83,10 @@
             margin-left: auto;
             margin-right: auto;
         }
+
+        @media screen and (min-width: $desktop-breakpoint) {
+            width: 55.313rem;
+        }
     }
 
     
@@ -84,6 +94,7 @@
 }
 
 .about {
+    padding-bottom: 1.75rem;
 
     &__title {
         @media screen and (min-width: $tablet-breakpoint) {
@@ -102,6 +113,14 @@
             margin-right: auto;
         }
     }
+
+    &__title, &__article {
+        @media screen and (min-width: $desktop-breakpoint) {
+            width: 55.313rem;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
 }
 
 
@@ -111,6 +130,12 @@
 
     @media screen and (min-width: $tablet-breakpoint) {
         padding-bottom: 1.75rem;
+    }
+
+    h2 {
+        @media screen and (min-width: $desktop-breakpoint) {
+            padding: 0;
+        }
     }
 
     &__img-container {
@@ -126,11 +151,6 @@
             margin: 0 1.5rem 0 1.5rem;
         }
 
-        @media screen and (min-width: $desktop-breakpoint) {
-            max-width: 63.75rem;
-            margin: auto;
-        }
-
         img {
             @media screen and (min-width: $tablet-breakpoint) {
                 margin: 0.75rem;
@@ -139,4 +159,12 @@
             }
         }
     }
+
+    h2, &__img-container {
+        @media screen and (min-width: $desktop-breakpoint) {
+           width: $desktop-element-width;
+           margin-left: auto;
+           margin-right: auto;
+       }
+   }
 }

@@ -85,7 +85,15 @@ img {
             width: auto;
           }
         }
-        
+
+        a {
+          text-decoration: none;
+          color: $primary-color-silver;
+          padding: 0 1rem 1rem 1rem;
+          font-size: 0.875rem;
+          font-weight: 400;
+        }
+
         .active {
           border-bottom: 0.25rem solid;
           border-color: $primary-color-white;
@@ -98,25 +106,14 @@ img {
           color: $primary-color-white;
           font-weight: 700;
             
-          @media screen and (min-width: $tablet-breakpoint) {
-            text-decoration: underline;
-            text-decoration-color: $primary-color-white;
-            text-decoration-thickness: 0.25rem;
-            text-underline-offset: 1.5rem;
+            @media screen and (min-width: $tablet-breakpoint) {
+              text-decoration: underline;
+              text-decoration-color: $primary-color-white;
+              text-decoration-thickness: 0.25rem;
+              text-underline-offset: 1.5rem;
+            }
           }
         }
-        }
-
-        a {
-        text-decoration: none;
-        color: $primary-color-silver;
-        padding: 0 1rem 1rem 1rem;
-        font-size: 0.875rem;
-        font-weight: 400;
-      
-        }
-
-        
       }
       }
 
@@ -303,10 +300,8 @@ img {
     }
   }
 
-  
 
   .font {
-    
     &__white {
       color: $primary-color-white;
     }

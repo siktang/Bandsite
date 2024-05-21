@@ -79,9 +79,12 @@
         padding-bottom: 0;
     }
 
-    &__quote {
+    &__quote, &__quotee {
         font-size: 0.875rem;
         font-weight: 700;
+    }
+    
+    &__quote {
         padding: 1rem 1rem 0.5rem 1rem;
 
         @media screen and (min-width:$tablet-breakpoint) {
@@ -91,8 +94,6 @@
     }
 
     &__quotee {
-        font-size: 0.875rem;
-        font-weight: 700;
         padding: 0 1rem 1rem 1rem;
     }
 
@@ -118,20 +119,16 @@
             padding-left: 1rem;
             padding-right: 1rem;
         }
+
+        @media screen and (min-width: $desktop-breakpoint) {
+            width: 55.313rem;
+        }
     }
 
     &__article {
         @media screen and (min-width: $tablet-breakpoint) {
             display: flex;
             justify-content: space-evenly;            
-        }
-    }
-
-    &__title, &__article {
-        @media screen and (min-width: $desktop-breakpoint) {
-            width: 55.313rem;
-            margin-left: auto;
-            margin-right: auto;
         }
     }
 }

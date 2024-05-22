@@ -189,32 +189,67 @@
 }
 
 .comment {
-    
-    &__avatar-container {
-        width: 2.25rem;
-        height: 2.25rem;
-        
-        @media screen and (min-width: $tablet-breakpoint) {
-            width: 3rem;
-            height: 3rem;
-        }
-
-        &--img {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            padding: 0;
-        }
-    }
 
     &__form {
-        
+        display: flex;
+        width: 100vw;
+        padding: 0 1rem 1rem 1rem;
+
+        &--avatar {
+            width: 2.25rem;
+            height: 2.25rem;
+            border-radius: 50%;
+            padding: 0;
+            margin: 1rem 1rem 0 0;
+        }
+
+        &--formBody {
+            width: 100%;
+        }
+
         &--label {
-            color: $secondary-color-silver;
+            color: $primary-color-silver;
+            font-weight: 600;
+            font-size: 0.813rem;
+            
         }
 
         &--field {
+            padding: 0.75rem;
+            margin: 0.25rem 0 1rem 0;
+            border-radius: 4px;
+            border: 1px solid $secondary-color-silver;
+            background-color: $secondary-color-white;
+            
+            @media screen and (min-width: $tablet-breakpoint) {
+                padding: 1rem;
+            }
+        }
+
+        &--button {
+            background-color: $primary-color-black;
+            color: $primary-color-white;
+            font-weight: 600;
+            height: 2.5rem;
+            width: 100%;
             border-radius: 4px;
         }
     }
+
+    #name {
+        min-height: 2.25rem;
+    }
+
+    label, input, textarea {
+        display: block;
+        width: 100%;
+    }
+
+    textarea {
+        height: 8rem;
+        resize: vertical;
+    }
+    
+
+    
 }

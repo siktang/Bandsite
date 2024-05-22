@@ -36,7 +36,7 @@ img {
 
 .divider {
   border-bottom: 1px solid #E1E1E1;
-  margin-bottom: 1rem;
+  margin: 0 1rem 0.5rem 1rem;
 }
 
 .header {

@@ -6,27 +6,27 @@ commentHeader.innerText = "Join the Conversation";
 
 commentContainer.appendChild(commentHeader);
 
+let formContainer = document.createElement("section");
+formContainer.classList.add("comment__form");
+
+commentContainer.appendChild(formContainer);
+
 // adding avatar
 
-let avatarContainer = document.createElement("div");
-avatarContainer.classList.add("comment__avatar-container");
-
-commentContainer.appendChild(avatarContainer);
-
-let avatar = document.createElement("IMG");
-avatar.classList.add("comment__avatar-container--img");
+let avatar = document.createElement("img");
+avatar.classList.add("comment__form--avatar");
 avatar.src = "./assets/Images/Mohan-muruge.jpg";
 avatar.setAttribute("alt", "avatar");
 
-avatarContainer.appendChild(avatar);
+formContainer.appendChild(avatar);
 
 // creating comment form
 
 let form = document.createElement("form");
 form.setAttribute("id", "form");
-form.classList.add("comment__form");
+form.classList.add("comment__form--formBody");
 
-commentContainer.appendChild(form);
+formContainer.appendChild(form);
 
 function createFormFields(form, formFieldsToAdd) {
     
@@ -65,7 +65,7 @@ const formFieldsToAdd = [
                 { key: "id", value: "name" },
                 { key: "name", value: "name" },
                 { key: "type", value: "text" },
-                { key: "placeholder", value: "Enter your name" }
+                { key: "placeholder", value: "Enter your name" },
             ]
         }
     },
@@ -79,7 +79,8 @@ const formFieldsToAdd = [
             attributes: [
                 { key: "id", value: "comment" },
                 { key: "name", value: "comment" },
-                { key: "placeholder", value: "Add a new comment" }
+                { key: "placeholder", value: "Add a new comment"},
+                { key: "placeholder", value: "Add a new comment"},
             ]
         }
     }
@@ -87,10 +88,16 @@ const formFieldsToAdd = [
 
 createFormFields(form, formFieldsToAdd);
 
+let commentButton = document.createElement("button");
+commentButton.innerText = "COMMENT";
+commentButton.classList.add("comment__form--button");
+
+form.appendChild(commentButton);
+
 let divider = document.createElement("div");
 divider.classList.add("divider");
 
-form.appendChild(divider);
+commentContainer.appendChild(divider);
 
 
 

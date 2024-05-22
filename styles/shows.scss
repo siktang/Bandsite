@@ -1,0 +1,44 @@
+@use "./partials/globals";
+@use "./partials/typography";
+@use "./partials/mixins" as *;
+@use "./partials/variables" as *;
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url(../assets/Images/hero-shows.jpg);
+    background-size: cover;
+    height: 35vh;
+
+    @media screen and (min-width: $tablet-breakpoint) {
+        height: 80vh;
+    }
+
+    
+
+    &__title {
+        font-size: 1.5rem;
+        line-height: 2rem;
+        padding: 1rem;
+        font-weight: 700;
+
+        @media screen and (min-width:$tablet-breakpoint) {
+            font-size: 3.75rem;
+            line-height: 4.25rem;
+            margin-left: 1.25rem
+        }
+
+        @media screen and (min-width:$desktop-breakpoint) {
+            width: $desktop-element-width;
+            padding: 0;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        }
+
+    &__subtitle {
+        font-size: 0.875rem;
+        font-weight: 400;
+    }
+
+}

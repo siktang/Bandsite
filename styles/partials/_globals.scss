@@ -32,6 +32,7 @@ img {
     width: 100vw;
     text-align: center;
     background-color: $primary-color-black;
+    z-index: 1;
 
     @media screen and (min-width: $tablet-breakpoint) {
       position: fixed;

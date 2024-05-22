@@ -8,9 +8,16 @@ commentContainer.appendChild(commentHeader);
 
 // creating comment form
 
-let avatar = document.createElement("img");
-commentHeader.classList.add("comment__avatar");
+let avatarContainer = document.createElement("div");
+avatarContainer.classList.add("comment__avatar-container");
 
+commentContainer.appendChild(avatarContainer);
+
+let avatar = document.createElement("IMG");
+avatar.classList.add("comment__avatar-container--img");
+avatar.src = "../assets/Images/Mohan-muruge.jpg";
+
+avatarContainer.appendChild(avatar);
 
 let formContainer = document.createElement("div");
 formContainer.classList.add("comment__formContainer");

@@ -187,3 +187,23 @@
        }
    }
 }
+
+.comment {
+    
+    &__avatar-container {
+        width: 2.25rem;
+        height: 2.25rem;
+        
+        @media screen and (min-width: $tablet-breakpoint) {
+            width: 3rem;
+            height: 3rem;
+        }
+
+        &--img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            padding: 0;
+        }
+    }
+}

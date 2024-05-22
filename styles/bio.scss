@@ -206,4 +206,15 @@
             padding: 0;
         }
     }
+
+    &__form {
+        
+        &--label {
+            color: $secondary-color-silver;
+        }
+
+        &--field {
+            border-radius: 4px;
+        }
+    }
 }

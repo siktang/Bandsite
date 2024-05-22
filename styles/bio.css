@@ -34,6 +34,11 @@ img {
   padding: 0;
 }
 
+.divider {
+  border-bottom: 1px solid #E1E1E1;
+  margin-bottom: 1rem;
+}
+
 .header {
   position: sticky;
   top: 0;
@@ -486,4 +491,10 @@ img {
   height: 100%;
   border-radius: 50%;
   padding: 0;
+}
+.comment__form--label {
+  color: #E1E1E1;
+}
+.comment__form--field {
+  border-radius: 4px;
 }/*# sourceMappingURL=bio.css.map */

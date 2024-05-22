@@ -6,7 +6,7 @@ commentHeader.innerText = "Join the Conversation";
 
 commentContainer.appendChild(commentHeader);
 
-// creating comment form
+// adding avatar
 
 let avatarContainer = document.createElement("div");
 avatarContainer.classList.add("comment__avatar-container");
@@ -15,50 +15,89 @@ commentContainer.appendChild(avatarContainer);
 
 let avatar = document.createElement("IMG");
 avatar.classList.add("comment__avatar-container--img");
-avatar.src = "../assets/Images/Mohan-muruge.jpg";
+avatar.src = "./assets/Images/Mohan-muruge.jpg";
+avatar.setAttribute("alt", "avatar");
 
 avatarContainer.appendChild(avatar);
 
-let formContainer = document.createElement("div");
-formContainer.classList.add("comment__formContainer");
-
-commentContainer.appendChild(formContainer);
+// creating comment form
 
 let form = document.createElement("form");
 form.setAttribute("id", "form");
+form.classList.add("comment__form");
 
-formContainer.appendChild(form);
+commentContainer.appendChild(form);
 
-let nameLabel = document.createElement("label");
-nameLabel.setAttribute("for", "name");
-nameLabel.innerText = "NAME";
+function createFormFields(form, formFieldsToAdd) {
+    
+    for(let i = 0; i < formFieldsToAdd.length; i++) {
+        const item = formFieldsToAdd[i];
 
-form.appendChild(nameLabel);
+        // create label pair for each object
+        const labelToAdd = document.createElement("label");
+        labelToAdd.classList.add("comment__form--label");
+        labelToAdd.innerText = item.label.text;
+        labelToAdd.setAttribute("for", item.label.for);
 
-let nameInput = document.createElement("input");
-nameInput.setAttribute("id", "name");
-nameInput.setAttribute("name", "name");
-nameInput.setAttribute("type", "text");
-nameInput.setAttribute("placeholder", "Enter your name");
+        // create field for each object
+        const fieldToAdd = document.createElement(item.field.type);
+        fieldToAdd.classList.add("comment__form--field");
+        for(let j = 0; j < item.field.attributes.length; j++) {
+            fieldToAdd.setAttribute(item.field.attributes[j].key, item.field.attributes[j].value);
+        }
 
-form.appendChild(nameInput);
+        form.appendChild(labelToAdd);
+        form.appendChild(fieldToAdd);
+    }
 
-let commentLabel = document.createElement("label");
-commentLabel.setAttribute("for", "comment");
-commentLabel.innerText = "COMMENT";
+    return;
+}
 
-form.appendChild(commentLabel);
+const formFieldsToAdd = [
+    {
+        label: {
+            text: "NAME",
+            for: "name"
+        },
+        field: {
+            type: "input",
+            attributes: [
+                { key: "id", value: "name" },
+                { key: "name", value: "name" },
+                { key: "type", value: "text" },
+                { key: "placeholder", value: "Enter your name" }
+            ]
+        }
+    },
+    {
+        label: {
+            text: "COMMENT",
+            for: "comment"
+        },       
+        field: {
+            type: "textarea",
+            attributes: [
+                { key: "id", value: "comment" },
+                { key: "name", value: "comment" },
+                { key: "placeholder", value: "Add a new comment" }
+            ]
+        }
+    }
+]
 
-let commentTextarea = document.createElement("textarea");
-commentTextarea.setAttribute("id", "comment");
-commentTextarea.setAttribute("name", "comment");
-commentTextarea.setAttribute("type", "text");
-commentTextarea.setAttribute("placeholder", "Add a new comment");
+createFormFields(form, formFieldsToAdd);
 
-form.appendChild(commentTextarea);
+let divider = document.createElement("div");
+divider.classList.add("divider");
+
+form.appendChild(divider);
+
 
 
 // default comments section
+
+let defaultArea = document.createElement("section");
+defaultArea.classList.add("comments__default");
 
 const defaultComments = [
     {
@@ -77,3 +116,12 @@ const defaultComments = [
         comment: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
     }, 
 ];
+
+const username = document.createElement("h3");
+username.classList.add("username");
+
+const postdate = document.createElement("h3");
+postdate.classList.add("date");
+
+
+

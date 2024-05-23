@@ -40,6 +40,14 @@ img {
   margin: 0 1rem 0.5rem 1rem;
 }
 
+::-moz-placeholder {
+  color: #323232;
+}
+
+::placeholder {
+  color: #323232;
+}
+
 .header {
   position: sticky;
   top: 0;

@@ -213,7 +213,7 @@
         &--label {
             color: $primary-color-silver;
             font-weight: 600;
-            font-size: 0.813rem;
+            font-size: 0.625rem;
             
         }
 
@@ -227,6 +227,8 @@
             @media screen and (min-width: $tablet-breakpoint) {
                 padding: 1rem;
             }
+
+
         }
 
         &--button {
@@ -253,6 +255,46 @@
         resize: vertical;
     }
     
+    &__submitted {
 
+        &--item {
+            display: flex;
+            width: 100vw;
+            padding: 0 1rem 1rem 1rem;
+        }
+
+        &--noAvatar {
+            background-color: $secondary-color-silver;
+            width: 2.25rem;
+            height: 2.25rem;
+            border-radius: 50%;
+            padding: 0;
+        }
+
+        &--content {
+            width: 100%;
+            padding-left: 1rem;
+
+            h3, p {
+                font-size: 0.813rem;
+            }
+        }
+
+        
+        &--header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+
+        &--date {
+            color: $primary-color-silver;
+            font-weight: 400;
+        }    
+        
+        &--details {
+                font-weight: 500;
+        }
+    }
     
 }

@@ -24,22 +24,22 @@ function appendFormFields(form) {
 }
 
 
-let commentContainer = document.querySelector(".comment");
+const commentContainer = document.querySelector(".comment");
 
-let commentHeader = document.createElement("h2");
+const commentHeader = document.createElement("h2");
 commentHeader.classList.add("section-header");
 commentHeader.innerText = "Join the Conversation";
 
 commentContainer.appendChild(commentHeader);
 
-let formContainer = document.createElement("section");
+const formContainer = document.createElement("section");
 formContainer.classList.add("comment__form");
 
 commentContainer.appendChild(formContainer);
 
 // Adding avatar
 
-let avatar = document.createElement("img");
+const avatar = document.createElement("img");
 avatar.classList.add("comment__form--avatar");
 avatar.src = "./assets/Images/Mohan-muruge.jpg";
 avatar.setAttribute("alt", "avatar");
@@ -82,7 +82,7 @@ const formFieldsToAdd = [
     }
 ]
 
-let form = document.createElement("form");
+const form = document.createElement("form");
 form.setAttribute("id", "form");
 form.classList.add("comment__form--formBody");
 
@@ -90,13 +90,13 @@ formContainer.appendChild(form);
 
 appendFormFields(form);
 
-let commentButton = document.createElement("button");
+const commentButton = document.createElement("button");
 commentButton.innerText = "COMMENT";
 commentButton.classList.add("comment__form--button");
 
 form.appendChild(commentButton);
 
-let divider = document.createElement("div");
+const divider = document.createElement("div");
 divider.classList.add("divider");
 
 commentContainer.appendChild(divider);
@@ -126,5 +126,65 @@ const submittedComments = [
 
 
 
+{/* <div class="comment__submitted">
+                <div class="comment__submitted--item">
+                    <div class="comment__submitted--noAvatar">
+                    </div>
+                    <section class="comment__submitted--content">
+                        <div class="comment__submitted--header">
+                            <h3 class="comment__submitted--name">Victor Pinto</h3>
+                            <h3 class="comment__submitted--date">11/02/2023</h3>
+                        </div>
+                        <p class="comment__submitted--details">
+                            This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.
+                        </p>
+                    </section>
+                </div>
+                <div class="divider"></div>
+            </div> */}
 
+
+const commentList = (comments) => {
+const commentSubmitted = document.createElement("section");
+commentSubmitted.classList.add("comment__submitted");
+commentContainer.appendChild(commentSubmitted)
+
+const commentItem = document.createElement("div");
+commentItem.classList.add("comment__submitted--item");
+commentSubmitted.appendChild(commentItem);
+
+const noAvatar = document.createElement("div");
+noAvatar.classList.add("comment__submitted--noAvatar");
+commentItem.appendChild(noAvatar);
+
+const commentContent = document.createElement("section");
+commentContent.classList.add("comment__submitted--content");
+commentItem.appendChild(commentContent);
+
+const commentHeading = document.createElement("div");
+commentHeading.classList.add("comment__submitted--header");
+commentContent.appendChild(commentHeading);
+
+const commentName = document.createElement("h3");
+commentName.classList.add("comment__submitted--name");
+commentName.textContent = comments.name;
+commentHeading.appendChild(commentName);
+
+const commentDate = document.createElement("h3");
+commentDate.classList.add("comment__submitted--date");
+commentDate.textContent = comments.date;
+commentHeading.appendChild(commentDate);
+
+const commentDetails = document.createElement("p");
+commentDetails.classList.add("comment__submitted--details");
+commentDetails.textContent = comments.comment;
+commentContent.appendChild(commentDetails);
+
+commentSubmitted.appendChild(divider);
+
+}
+
+for ( i = 0; i < submittedComments.length; i++) {
+    commentList(submittedComments[i]);
+}
 

@@ -40,6 +40,14 @@ img {
   margin: 0 1rem 0.5rem 1rem;
 }
 
+::-moz-placeholder {
+  color: #323232;
+}
+
+::placeholder {
+  color: #323232;
+}
+
 .header {
   position: sticky;
   top: 0;
@@ -505,7 +513,7 @@ img {
 .comment__form--label {
   color: #AFAFAF;
   font-weight: 600;
-  font-size: 0.813rem;
+  font-size: 0.625rem;
 }
 .comment__form--field {
   padding: 0.75rem;
@@ -537,4 +545,35 @@ img {
 .comment textarea {
   height: 8rem;
   resize: vertical;
+}
+.comment__submitted--item {
+  display: flex;
+  width: 100vw;
+  padding: 0 1rem 1rem 1rem;
+}
+.comment__submitted--noAvatar {
+  background-color: #E1E1E1;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  padding: 0;
+}
+.comment__submitted--content {
+  width: 100%;
+  padding-left: 1rem;
+}
+.comment__submitted--content h3, .comment__submitted--content p {
+  font-size: 0.813rem;
+}
+.comment__submitted--header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.comment__submitted--date {
+  color: #AFAFAF;
+  font-weight: 400;
+}
+.comment__submitted--details {
+  font-weight: 500;
 }/*# sourceMappingURL=bio.css.map */

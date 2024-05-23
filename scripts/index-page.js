@@ -1,9 +1,14 @@
-function appendFormFields(form) {
-    
-    for(let i = 0; i < formFieldsToAdd.length; i++) {
-        const item = formFieldsToAdd[i];
+/*
+******************
+Functions 
+******************
+*/
 
-        // create label pair for each object
+const displayFormFields = (targetForm) => {
+    for(let i = 0; i < formFields.length; i++) {
+        const item = formFields[i];
+
+        // create label for each object
         const labelToAdd = document.createElement("label");
         labelToAdd.classList.add("comment__form--label");
         labelToAdd.innerText = item.label.text;
@@ -16,40 +21,68 @@ function appendFormFields(form) {
             fieldToAdd.setAttribute(item.field.attributes[j].key, item.field.attributes[j].value);
         }
 
-        form.appendChild(labelToAdd);
-        form.appendChild(fieldToAdd);
+        targetForm.appendChild(labelToAdd);
+        targetForm.appendChild(fieldToAdd);
     }
 
     return;
 }
 
+const displayComments = (comments) => {
+    const commentSubmitted = document.createElement("section");
+    commentSubmitted.classList.add("comment__submitted");
+    commentContainer.appendChild(commentSubmitted);
 
-const commentContainer = document.querySelector(".comment");
+    const commentItem = document.createElement("div");
+    commentItem.classList.add("comment__submitted--item");
+    commentSubmitted.appendChild(commentItem);
 
-const commentHeader = document.createElement("h2");
-commentHeader.classList.add("section-header");
-commentHeader.innerText = "Join the Conversation";
+    const noAvatar = document.createElement("div");
+    noAvatar.classList.add("comment__submitted--noAvatar");
+    commentItem.appendChild(noAvatar);
 
-commentContainer.appendChild(commentHeader);
+    const commentContent = document.createElement("section");
+    commentContent.classList.add("comment__submitted--content");
+    commentItem.appendChild(commentContent);
 
-const formContainer = document.createElement("section");
-formContainer.classList.add("comment__form");
+    const commentHeading = document.createElement("div");
+    commentHeading.classList.add("comment__submitted--header");
+    commentContent.appendChild(commentHeading);
 
-commentContainer.appendChild(formContainer);
+    const commentName = document.createElement("h3");
+    commentName.classList.add("comment__submitted--name");
+    commentName.textContent = comments.name;
+    commentHeading.appendChild(commentName);
 
-// Adding avatar
+    const commentDate = document.createElement("h3");
+    commentDate.classList.add("comment__submitted--date");
+    commentDate.textContent = comments.date.toLocaleDateString("es-pa");
+    commentHeading.appendChild(commentDate);
 
-const avatar = document.createElement("img");
-avatar.classList.add("comment__form--avatar");
-avatar.src = "./assets/Images/Mohan-muruge.jpg";
-avatar.setAttribute("alt", "avatar");
+    const commentDetails = document.createElement("p");
+    commentDetails.classList.add("comment__submitted--details");
+    commentDetails.textContent = comments.comment;
+    commentContent.appendChild(commentDetails);
 
-formContainer.appendChild(avatar);
+    const divider = document.createElement("div");
+    divider.classList.add("divider");
+    commentSubmitted.appendChild(divider);
+}
 
 
-// creating comment form
+/*
+******************
+Arrays with predefined values
 
-const formFieldsToAdd = [
+formFields: 
+- label/input pairs to be displayed in the form
+
+submittedComments: 
+- history of comments
+******************
+*/
+
+const formFields = [
     {
         label: {
             text: "NAME",
@@ -82,13 +115,62 @@ const formFieldsToAdd = [
     }
 ]
 
+const submittedComments = [
+    {
+        name: "Victor Pinto",
+        date: new Date("11/02/2023"),
+        comment: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
+    }, 
+    {
+        name: "Christina Cabrera",
+        date: new Date("10/28/2023"),
+        comment: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
+    }, 
+    {
+        name: "Isaac Tadesse",
+        date: new Date("10/20/2023"),
+        comment: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
+    }, 
+];
+
+
+/*
+******************
+Start building Comments section in the page
+******************
+*/
+
+const commentContainer = document.querySelector(".comment");
+
+const commentHeader = document.createElement("h2");
+commentHeader.classList.add("section-header");
+commentHeader.innerText = "Join the Conversation";
+
+commentContainer.appendChild(commentHeader);
+
+const formContainer = document.createElement("section");
+formContainer.classList.add("comment__form");
+
+commentContainer.appendChild(formContainer);
+
+// Adding avatar
+
+const avatar = document.createElement("img");
+avatar.classList.add("comment__form--avatar");
+avatar.src = "./assets/Images/Mohan-muruge.jpg";
+avatar.setAttribute("alt", "avatar");
+
+formContainer.appendChild(avatar);
+
+// creating comment form
+
 const form = document.createElement("form");
 form.setAttribute("id", "form");
 form.classList.add("comment__form--formBody");
 
 formContainer.appendChild(form);
 
-appendFormFields(form);
+displayFormFields(form);
 
 const commentButton = document.createElement("button");
 commentButton.innerText = "COMMENT";
@@ -101,90 +183,7 @@ divider.classList.add("divider");
 
 commentContainer.appendChild(divider);
 
-
-
 // submitted comments section
 
-
-const submittedComments = [
-    {
-        name: "Victor Pinto",
-        date: new Date(2023, 11, 2),
-        comment: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
-    }, 
-    {
-        name: "Christina Cabrera",
-        date: new Date(2023, 10, 28),
-        comment: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
-    }, 
-    {
-        name: "Isaac Tadesse",
-        date: new Date(2023, 10, 20),
-        comment: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
-    }, 
-];
-
-
-
-{/* <div class="comment__submitted">
-                <div class="comment__submitted--item">
-                    <div class="comment__submitted--noAvatar">
-                    </div>
-                    <section class="comment__submitted--content">
-                        <div class="comment__submitted--header">
-                            <h3 class="comment__submitted--name">Victor Pinto</h3>
-                            <h3 class="comment__submitted--date">11/02/2023</h3>
-                        </div>
-                        <p class="comment__submitted--details">
-                            This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.
-                        </p>
-                    </section>
-                </div>
-                <div class="divider"></div>
-            </div> */}
-
-
-const commentList = (comments) => {
-const commentSubmitted = document.createElement("section");
-commentSubmitted.classList.add("comment__submitted");
-commentContainer.appendChild(commentSubmitted)
-
-const commentItem = document.createElement("div");
-commentItem.classList.add("comment__submitted--item");
-commentSubmitted.appendChild(commentItem);
-
-const noAvatar = document.createElement("div");
-noAvatar.classList.add("comment__submitted--noAvatar");
-commentItem.appendChild(noAvatar);
-
-const commentContent = document.createElement("section");
-commentContent.classList.add("comment__submitted--content");
-commentItem.appendChild(commentContent);
-
-const commentHeading = document.createElement("div");
-commentHeading.classList.add("comment__submitted--header");
-commentContent.appendChild(commentHeading);
-
-const commentName = document.createElement("h3");
-commentName.classList.add("comment__submitted--name");
-commentName.textContent = comments.name;
-commentHeading.appendChild(commentName);
-
-const commentDate = document.createElement("h3");
-commentDate.classList.add("comment__submitted--date");
-commentDate.textContent = comments.date;
-commentHeading.appendChild(commentDate);
-
-const commentDetails = document.createElement("p");
-commentDetails.classList.add("comment__submitted--details");
-commentDetails.textContent = comments.comment;
-commentContent.appendChild(commentDetails);
-
-commentSubmitted.appendChild(divider);
-
-}
-
-for ( i = 0; i < submittedComments.length; i++) {
-    commentList(submittedComments[i]);
-}
+submittedComments.forEach((item) => displayComments(item));
 

@@ -27,7 +27,18 @@ img {
 
 .divider {
   border-bottom: 1px solid $secondary-color-silver;
-  margin: 0 1rem 0.5rem 1rem;
+  margin: 0 1rem 1rem 1rem;
+
+  @media screen and (min-width: $tablet-breakpoint) {
+    width: 75vw;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 0 1rem 0;
+  }
+
+  @media screen and (min-width: $desktop-breakpoint) {
+  width: 47vw;
+  }
 }
 
 ::placeholder {
@@ -169,14 +180,21 @@ img {
       }
 
     &__social {
-     
+      
+      .section-header {
+          padding: 0 0 1rem 0;
+          width: 14.25rem;
+
+          @media screen and (min-width:$tablet-breakpoint) {
+            padding: 0;
+            margin-left: 0;
+            margin-right: 0;
+          }
+        }
+      
       @media screen and (min-width:$tablet-breakpoint) {
         display: flex;
         align-items: center;
-
-        h2 {
-          padding: 0;
-        }
       }  
 
       &--icons {
@@ -231,14 +249,14 @@ img {
 
     &__copyright {
       padding-top: 1rem;
-      padding-bottom: 2rem;
+      padding-bottom: 0.5rem;
     }
 
     &__logo--mobile {
       position: absolute;
       bottom: 2.5rem;
       left: 1rem;
-      margin-bottom: 2.5rem;
+      margin-bottom: 2rem;
       
       @media screen and (min-width:$tablet-breakpoint) {
         display: none;
@@ -272,21 +290,23 @@ img {
     font-size: 1.5rem;
     font-weight: 400;
     line-height: 2rem;
-    padding: 1rem;
     font-weight: 700;
+    margin-left: 1rem;
+    margin-right: 1rem;
 
   @media screen and (min-width:$tablet-breakpoint) {
       font-size: 2.25rem;
       line-height: 2.75rem;
-      padding: 2.25rem;
-
-      
+      margin-left: 2.25rem;
+      margin-right: 2.25rem;
     }
     
   @media screen and (min-width:$desktop-breakpoint) {
       font-size: 2.25rem;
-      line-height: 2.75rem;  
-      padding: 3rem 5rem 2.25rem 5rem;
+      line-height: 2.75rem; 
+      width: $desktop-element-width;
+      margin-left: auto;
+      margin-right: auto;
       }
   }
 

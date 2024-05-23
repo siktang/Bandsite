@@ -41,10 +41,10 @@
     background-color: $primary-color-white;
 
     &__title {
-    padding: 1.5rem 1rem 1rem 1rem;
+    padding: 1.5rem 0 1rem 0;
 
         @media screen and (min-width: $tablet-breakpoint) {
-            padding: 3rem 2.25rem 2.25rem 2.25rem;
+            padding: 3rem 0 2.25rem 0;
         }
 
         @media screen and (min-width: $desktop-breakpoint) {
@@ -139,6 +139,7 @@
 .gallery {
     background-color: $secondary-color-white;
     padding-top: 1.75rem;
+    padding-bottom: 0.25rem;
 
     h2 {
         @media screen and (min-width: $desktop-breakpoint) {
@@ -193,10 +194,33 @@
 .comment {
     background-color: $primary-color-white;
 
+    @media screen and (min-width: $tablet-breakpoint) {
+        padding-bottom: 1.25rem;
+    }
+
+    .section-header {
+        padding: 1rem 0 1rem 0;
+
+        @media screen and (min-width: $tablet-breakpoint) {
+            padding: 2.5rem 0 2.5rem 0;
+        }
+    }
+
     &__form {
         display: flex;
         width: 100vw;
         padding: 0 1rem 1rem 1rem;
+
+        @media screen and (min-width: $tablet-breakpoint) {
+            width: 75vw;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 0 1rem 0;
+        }
+
+        @media screen and (min-width: $desktop-breakpoint) {
+            width: 40vw;
+        }
 
         &--avatar {
             width: 2.25rem;
@@ -208,6 +232,8 @@
 
         &--formBody {
             width: 100%;
+            height: 17.5rem;
+            position: relative;
         }
 
         &--label {
@@ -238,11 +264,25 @@
             height: 2.5rem;
             width: 100%;
             border-radius: 4px;
+
+            @media screen and (min-width: $tablet-breakpoint) {
+                width: 9.375rem;
+                padding-left: 2rem;
+                padding-right: 2rem;
+                position: absolute;
+                right: 0;
+                bottom: -0.75rem
+            }
+
         }
     }
 
     #name {
         min-height: 2.25rem;
+
+        @media screen and (min-width: $tablet-breakpoint) {
+            min-height: 3rem;
+        }
     }
 
     label, input, textarea {
@@ -261,6 +301,17 @@
             display: flex;
             width: 100vw;
             padding: 0 1rem 1rem 1rem;
+
+            @media screen and (min-width: $tablet-breakpoint) {
+                width: 75vw;
+                margin-left: auto;
+                margin-right: auto;
+                padding: 0 0 1rem 0;
+            }
+
+            @media screen and (min-width: $desktop-breakpoint) {
+                width: 40vw;
+            }
         }
 
         &--noAvatar {

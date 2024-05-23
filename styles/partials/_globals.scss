@@ -10,7 +10,8 @@ html {
     box-sizing: border-box;
     padding: 0px;
     margin: 0px;
-    font-family: 'Avenir';
+    font-family: 'Avenir', sans-serif;
+    color: $primary-color-black;
 }
 
 img {
@@ -134,6 +135,10 @@ img {
     background-color: $primary-color-black;
     position: relative;
     padding-top: 1rem;
+    
+    * {
+      color: $primary-color-white;
+    }
 
     .footer-items {
       @media screen and (min-width:$tablet-breakpoint) {
@@ -225,11 +230,11 @@ img {
       padding-bottom: 2rem;
     }
 
-    &__logo1 {
+    &__logo--mobile {
       position: absolute;
       bottom: 2.5rem;
       left: 1rem;
-      margin-bottom: 2rem;
+      margin-bottom: 2.5rem;
       
       @media screen and (min-width:$tablet-breakpoint) {
         display: none;
@@ -237,7 +242,7 @@ img {
       
     }
 
-    &__logo2 {
+    &__logo--tablet {
       display: none;
 
       @media screen and (min-width:$tablet-breakpoint) {
@@ -249,7 +254,7 @@ img {
 
 
 
-.address, .agent1, .agent2 {
+.address, .agent-limitless, .agent-arch {
   display: flex;
   flex-direction: column;
 }

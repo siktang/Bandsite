@@ -38,7 +38,8 @@
 }
 
 .headline {
-    
+    background-color: $primary-color-white;
+
     &__title {
     padding: 1.5rem 1rem 1rem 1rem;
 
@@ -57,6 +58,7 @@
 
 .about {
     padding-bottom: 1.75rem;
+    background-color: $primary-color-white;
 
     @media screen and (min-width:$tablet-breakpoint) {
         display: flex;
@@ -189,6 +191,7 @@
 }
 
 .comment {
+    background-color: $primary-color-white;
 
     &__form {
         display: flex;

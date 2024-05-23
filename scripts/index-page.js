@@ -1,34 +1,4 @@
-let commentContainer = document.querySelector(".comment");
-
-let commentHeader = document.createElement("h2");
-commentHeader.classList.add("section-header");
-commentHeader.innerText = "Join the Conversation";
-
-commentContainer.appendChild(commentHeader);
-
-let formContainer = document.createElement("section");
-formContainer.classList.add("comment__form");
-
-commentContainer.appendChild(formContainer);
-
-// adding avatar
-
-let avatar = document.createElement("img");
-avatar.classList.add("comment__form--avatar");
-avatar.src = "./assets/Images/Mohan-muruge.jpg";
-avatar.setAttribute("alt", "avatar");
-
-formContainer.appendChild(avatar);
-
-// creating comment form
-
-let form = document.createElement("form");
-form.setAttribute("id", "form");
-form.classList.add("comment__form--formBody");
-
-formContainer.appendChild(form);
-
-function createFormFields(form, formFieldsToAdd) {
+function appendFormFields(form) {
     
     for(let i = 0; i < formFieldsToAdd.length; i++) {
         const item = formFieldsToAdd[i];
@@ -52,6 +22,32 @@ function createFormFields(form, formFieldsToAdd) {
 
     return;
 }
+
+
+let commentContainer = document.querySelector(".comment");
+
+let commentHeader = document.createElement("h2");
+commentHeader.classList.add("section-header");
+commentHeader.innerText = "Join the Conversation";
+
+commentContainer.appendChild(commentHeader);
+
+let formContainer = document.createElement("section");
+formContainer.classList.add("comment__form");
+
+commentContainer.appendChild(formContainer);
+
+// Adding avatar
+
+let avatar = document.createElement("img");
+avatar.classList.add("comment__form--avatar");
+avatar.src = "./assets/Images/Mohan-muruge.jpg";
+avatar.setAttribute("alt", "avatar");
+
+formContainer.appendChild(avatar);
+
+
+// creating comment form
 
 const formFieldsToAdd = [
     {
@@ -86,7 +82,13 @@ const formFieldsToAdd = [
     }
 ]
 
-createFormFields(form, formFieldsToAdd);
+let form = document.createElement("form");
+form.setAttribute("id", "form");
+form.classList.add("comment__form--formBody");
+
+formContainer.appendChild(form);
+
+appendFormFields(form);
 
 let commentButton = document.createElement("button");
 commentButton.innerText = "COMMENT";
@@ -101,34 +103,28 @@ commentContainer.appendChild(divider);
 
 
 
-// default comments section
+// submitted comments section
 
-let defaultArea = document.createElement("section");
-defaultArea.classList.add("comments__default");
 
-const defaultComments = [
+const submittedComments = [
     {
         name: "Victor Pinto",
-        date: "11/02/2023",
+        date: new Date(2023, 11, 2),
         comment: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
     }, 
     {
         name: "Christina Cabrera",
-        date: "10/28/2023",
+        date: new Date(2023, 10, 28),
         comment: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
     }, 
     {
         name: "Isaac Tadesse",
-        date: "10/20/2023",
+        date: new Date(2023, 10, 20),
         comment: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
     }, 
 ];
 
-const username = document.createElement("h3");
-username.classList.add("username");
 
-const postdate = document.createElement("h3");
-postdate.classList.add("date");
 
 
 

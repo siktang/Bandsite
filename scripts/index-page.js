@@ -1,16 +1,14 @@
-
+// Preset functions
 
 const displayFormFields = (targetForm) => {
     for(let i = 0; i < formFields.length; i++) {
         const item = formFields[i];
 
-        // create label for each object
         const labelToAdd = document.createElement("label");
         labelToAdd.classList.add("comment__form--label");
         labelToAdd.innerText = item.label.text;
         labelToAdd.setAttribute("for", item.label.for);
 
-        // create field for each object
         const fieldToAdd = document.createElement(item.field.type);
         fieldToAdd.classList.add("comment__form--field");
         for(let j = 0; j < item.field.attributes.length; j++) {
@@ -26,7 +24,7 @@ const displayFormFields = (targetForm) => {
 const displayComments = (comments) => {
     const commentSubmitted = document.createElement("section");
     commentSubmitted.classList.add("comment__submitted");
-    commentContainer.appendChild(commentSubmitted);
+    commentBox.appendChild(commentSubmitted);
 
     const commentItem = document.createElement("div");
     commentItem.classList.add("comment__submitted--item");
@@ -64,6 +62,8 @@ const displayComments = (comments) => {
     commentSubmitted.appendChild(divider);
 }
 
+// Preset arrays
+
 const formFields = [
     {
         label: {
@@ -96,6 +96,7 @@ const formFields = [
     }
 ]
 
+
 const submittedComments = [
     {
         name: "Victor Pinto",
@@ -115,6 +116,7 @@ const submittedComments = [
 ];
 
 
+// Create comment form and list
 
 const commentContainer = document.querySelector(".comment");
 
@@ -157,7 +159,32 @@ divider.classList.add("divider");
 
 commentContainer.appendChild(divider);
 
-
+/// comment box to wrap all submitted comments
+const commentBox = document.createElement("div");
+commentBox.classList.add("comment-box");
 
 submittedComments.forEach((item) => displayComments(item));
+commentContainer.appendChild(commentBox);
+
+form.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const newComment = {
+        name: document.getElementById("name").value, 
+        date: new Date(), 
+        comment: document.getElementById("comment").value,};
+    
+    commentBox.replaceChildren();
+
+    submittedComments.push(newComment);
+    submittedComments.sort((a, b) => {
+        return b.date - a.date;
+    });
+
+    submittedComments.forEach((item) => displayComments(item));
+    commentContainer.appendChild(commentBox);
+
+    form.reset();
+});
+
 

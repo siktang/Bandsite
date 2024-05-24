@@ -424,10 +424,10 @@ img {
   }
 }
 .hero__songContainer {
-  height: 6.25rem;
+  height: 5.5rem;
   width: 90vw;
   border-radius: 4px;
-  margin: 1rem;
+  margin: 0 1rem 0 1rem;
 }
 @media screen and (min-width: 768px) {
   .hero__songContainer {
@@ -453,9 +453,6 @@ img {
 .shows .section-header {
   font-weight: 600;
   margin-top: 2.25rem;
-}
-.shows .shows-container {
-  margin: 1rem;
 }
 @media screen and (min-width: 768px) {
   .shows .section-header {
@@ -501,7 +498,7 @@ img {
   }
 }
 .shows__show-item {
-  margin: 1rem 0 1rem 0;
+  padding: 1rem;
 }
 @media screen and (min-width: 768px) {
   .shows__show-item {
@@ -547,4 +544,7 @@ img {
     padding-left: 2rem;
     padding-right: 2rem;
   }
+}
+.shows__show-item:hover {
+  background-color: #FAFAFA;
 }/*# sourceMappingURL=shows.css.map */

@@ -170,9 +170,10 @@ form.addEventListener("submit", (event) => {
     event.preventDefault();
 
     const newComment = {
-        name: document.getElementById("name").value, 
+        name: event.target.name.value, 
         date: new Date(), 
-        comment: document.getElementById("comment").value,};
+        comment: event.target.comment.value,
+    };
     
     commentBox.replaceChildren();
 

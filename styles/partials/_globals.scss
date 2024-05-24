@@ -61,7 +61,6 @@ img {
     z-index: 1;
 
     @media screen and (min-width: $tablet-breakpoint) {
-      position: fixed;
       display: flex;
       align-items: center;
     }

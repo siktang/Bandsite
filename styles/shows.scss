@@ -8,7 +8,8 @@
     flex-direction: column;
     background: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url(../assets/Images/hero-shows.jpg);
     background-size: cover;
-    height: 35vh;
+    height: 50vh;
+    position: relative;
 
     @media screen and (min-width: $tablet-breakpoint) {
         height: 80vh;
@@ -19,9 +20,10 @@
     }
 
     &__title {
+        color: $primary-color-white;
         font-size: 1.5rem;
         line-height: 2rem;
-        font-weight: 700;
+        font-weight: 600;
         padding-top: 1rem;
 
         @media screen and (min-width:$tablet-breakpoint) {
@@ -39,12 +41,116 @@
         }
 
     &__subtitle {
+        color: $primary-color-white;
         font-size: 0.875rem;
         font-weight: 400;
+    }
+
+    &__soundtrack {
+        position: absolute;
+        bottom: 2rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+        height:40%;
+        width: 90%;
     }
 
 }
 
 .shows {
     background-color: $primary-color-white;
+
+    @media screen and (min-width:$desktop-breakpoint) {
+        display: flex;
+        width: $desktop-element-width;
+        margin: 3rem auto 1.5rem auto;
+
+        .section-header {
+            width: 150px;
+            margin-right: 7.5rem;
+        }
+
+        .shows-container {
+            width: 870px;
+        }
+    }
+
+    &__tablet {
+        display: none;
+        padding: 1rem;
+
+        @media screen and (min-width:$tablet-breakpoint) {
+            display: flex;
+            justify-content: space-between;
+
+            &--header {
+                font-size: 0.813rem;
+                color: $primary-color-silver;
+                font-weight: 600;
+                flex-basis: 25%;
+
+                &--location {
+                    font-size: 0.813rem;
+                    color: $primary-color-silver;
+                    font-weight: 600;
+                    flex-basis: 50%;
+                }
+            }
+        }
+
+    }
+    &__show-item {
+        margin: 1rem;
+
+        @media screen and (min-width:$tablet-breakpoint) {
+            display: flex;
+
+            &--date, &--place {
+                flex-basis: 25%;
+            }
+        }
+
+        &--mobile-header {
+            font-size: 0.813rem;
+            color: $primary-color-silver;
+            font-weight: 600;
+            padding: 0.6rem 0 0.6rem 0;
+
+            @media screen and (min-width:$tablet-breakpoint) {
+                display: none;
+            }
+        }
+
+        &--date {
+            font-weight: 600;
+        }
+
+        &--place {
+            font-weight: 500;
+        }
+
+        &--date, &--place {
+            padding-bottom: 1rem;
+        }
+
+        &--button {
+            background-color: $primary-color-black;
+            color: $primary-color-white;
+            font-weight: 600;
+            height: 2.5rem;
+            width: 100%;
+            border-radius: 4px;
+            border-color: transparent;
+
+            @media screen and (min-width: $tablet-breakpoint) {
+                width: 9.5rem;
+                padding-left: 2rem;
+                padding-right: 2rem;
+            }
+        }
+
+       
+        
+    }
 }
+

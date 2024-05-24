@@ -108,8 +108,7 @@ const formFields = [
             attributes: [
                 { key: "id", value: "comment" },
                 { key: "name", value: "comment" },
-                { key: "placeholder", value: "Add a new comment"},
-                { key: "placeholder", value: "Add a new comment"},
+                { key: "placeholder", value: "Add a new comment"}
             ]
         }
     }
@@ -153,7 +152,6 @@ formContainer.classList.add("comment__form");
 
 commentContainer.appendChild(formContainer);
 
-// Adding avatar
 
 const avatar = document.createElement("img");
 avatar.classList.add("comment__form--avatar");
@@ -162,7 +160,6 @@ avatar.setAttribute("alt", "avatar");
 
 formContainer.appendChild(avatar);
 
-// creating comment form
 
 const form = document.createElement("form");
 form.setAttribute("id", "form");
@@ -183,7 +180,7 @@ divider.classList.add("divider");
 
 commentContainer.appendChild(divider);
 
-// submitted comments section
+
 
 submittedComments.forEach((item) => displayComments(item));
 

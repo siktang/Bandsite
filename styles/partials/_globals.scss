@@ -39,6 +39,11 @@ img {
   @media screen and (min-width: $desktop-breakpoint) {
   width: 47vw;
   }
+
+  &--mobile {
+    border-bottom: 1px solid $secondary-color-silver;
+    margin-bottom: 1rem;
+  }
 }
 
 ::placeholder {

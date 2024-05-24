@@ -1,8 +1,4 @@
-/*
-******************
-Functions 
-******************
-*/
+
 
 const displayFormFields = (targetForm) => {
     for(let i = 0; i < formFields.length; i++) {
@@ -25,7 +21,6 @@ const displayFormFields = (targetForm) => {
         targetForm.appendChild(fieldToAdd);
     }
 
-    return;
 }
 
 const displayComments = (comments) => {
@@ -68,19 +63,6 @@ const displayComments = (comments) => {
     divider.classList.add("divider");
     commentSubmitted.appendChild(divider);
 }
-
-
-/*
-******************
-Arrays with predefined values
-
-formFields: 
-- label/input pairs to be displayed in the form
-
-submittedComments: 
-- history of comments
-******************
-*/
 
 const formFields = [
     {
@@ -133,11 +115,6 @@ const submittedComments = [
 ];
 
 
-/*
-******************
-Start building Comments section in the page
-******************
-*/
 
 const commentContainer = document.querySelector(".comment");
 

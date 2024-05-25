@@ -177,10 +177,8 @@ form.addEventListener("submit", (event) => {
     
     commentBox.replaceChildren();
 
-    submittedComments.push(newComment);
-    submittedComments.sort((a, b) => {
-        return b.date - a.date;
-    });
+    submittedComments.unshift(newComment);
+    
 
     submittedComments.forEach((item) => displayComments(item));
     commentContainer.appendChild(commentBox);

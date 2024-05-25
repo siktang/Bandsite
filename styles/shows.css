@@ -346,7 +346,7 @@ img {
 .hero {
   background: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url(../assets/Images/hero-shows.jpg);
   background-size: cover;
-  height: 40vh;
+  height: 35vh;
 }
 @media screen and (min-width: 768px) {
   .hero {
@@ -459,7 +459,7 @@ img {
     margin: 2.25rem;
   }
   .shows .shows-container {
-    margin: 0 2.25rem 1.5rem 2.25rem;
+    margin: 0 1.25rem 1.5rem 1.25rem;
   }
 }
 @media screen and (min-width: 1280px) {
@@ -483,6 +483,8 @@ img {
   .shows__tablet {
     display: flex;
     justify-content: space-between;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
   .shows__tablet--header {
     font-size: 0.813rem;
@@ -499,11 +501,13 @@ img {
 }
 .shows__show-item {
   padding: 1rem;
+  transition: background-color 0ms ease;
 }
 @media screen and (min-width: 768px) {
   .shows__show-item {
     display: flex;
     align-items: baseline;
+    padding: 1.5rem 1rem 1.5rem 1rem;
   }
   .shows__show-item--date, .shows__show-item--place {
     flex-basis: 25%;
@@ -545,6 +549,9 @@ img {
     padding-right: 2rem;
   }
 }
-.shows__show-item:hover {
+.shows__show-item:not(.shows__selected):hover {
   background-color: #FAFAFA;
+}
+.shows__selected {
+  background-color: #E1E1E1;
 }/*# sourceMappingURL=shows.css.map */

@@ -6,7 +6,7 @@
 .hero {
     background: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url(../assets/Images/hero-shows.jpg);
     background-size: cover;
-    height: 40vh;
+    height: 35vh;
 
     @media screen and (min-width: $tablet-breakpoint) {
         height: 70vh;
@@ -119,7 +119,7 @@
         }
 
         .shows-container {
-            margin: 0 2.25rem 1.5rem 2.25rem;
+            margin: 0 1.25rem 1.5rem 1.25rem;
         }
     }
 
@@ -144,6 +144,8 @@
         @media screen and (min-width:$tablet-breakpoint) {
             display: flex;
             justify-content: space-between;
+            padding-left: 1rem;
+            padding-right: 1rem;
 
             &--header {
                 font-size: 0.813rem;
@@ -164,10 +166,12 @@
 
     &__show-item {
         padding: 1rem;
+        transition: background-color 0ms ease;
 
         @media screen and (min-width:$tablet-breakpoint) {
             display: flex;
             align-items: baseline;
+            padding: 1.5rem 1rem 1.5rem 1rem;
 
             &--date, &--place {
                 flex-basis: 25%;
@@ -217,8 +221,12 @@
         
     }
     
-    &__show-item:hover {
+    &__show-item:not(.shows__selected):hover {
         background-color: $secondary-color-white;
+    }
+
+    &__selected {
+        background-color: $secondary-color-silver;
     }
 }
 

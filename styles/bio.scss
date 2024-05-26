@@ -228,6 +228,8 @@
             border-radius: 50%;
             padding: 0;
             margin: 1rem 1rem 0 0;
+            object-fit: cover;
+            object-position: left;
         }
 
         &--formBody {
@@ -331,6 +333,7 @@
             height: 2.25rem;
             border-radius: 50%;
             padding: 0;
+            flex-shrink: 0;
         }
 
         &--content {

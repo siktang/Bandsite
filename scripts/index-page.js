@@ -184,4 +184,7 @@ form.addEventListener("submit", (event) => {
     commentContainer.appendChild(commentBox);
 
     form.reset();
+
 });
+
+

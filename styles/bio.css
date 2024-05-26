@@ -676,4 +676,12 @@ img {
 }
 .comment__submitted--details {
   font-weight: 500;
+}
+
+.error {
+  border: 1px solid #D22d2d;
+}
+
+.error:focus {
+  outline: transparent;
 }/*# sourceMappingURL=bio.css.map */

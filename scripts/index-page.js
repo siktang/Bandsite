@@ -62,6 +62,20 @@ const displayComments = (comments) => {
     commentSubmitted.appendChild(divider);
 }
 
+const validateForm = (name, comment) => {
+    if (name.value.length === 0) {
+        name.classList.add("error");
+        alert("Please enter your name!");
+        return false;
+    } else if (comment.value.length === 0) {
+        comment.classList.add("error");
+        alert("Please enter your comment!");
+        return false;
+    } else {
+        return true;
+    }
+}
+
 // Preset arrays
 
 const formFields = [
@@ -166,24 +180,35 @@ commentBox.classList.add("comment-box");
 submittedComments.forEach((item) => displayComments(item));
 commentContainer.appendChild(commentBox);
 
+
+
+// Form validation
 form.addEventListener("submit", (event) => {
     event.preventDefault();
+
+    const isValid = validateForm(event.target.name, event.target.comment)
+    
+    if (isValid === true) {
+    const errorItems = document.querySelectorAll(".error");
+        errorItems.forEach(
+            (item) => item.classList.remove("error")  
+        );
 
     const newComment = {
         name: event.target.name.value, 
         date: new Date(), 
         comment: event.target.comment.value,
     };
-    
+
     commentBox.replaceChildren();
 
     submittedComments.unshift(newComment);
-    
 
     submittedComments.forEach((item) => displayComments(item));
     commentContainer.appendChild(commentBox);
 
     form.reset();
+    }
 
 });
 

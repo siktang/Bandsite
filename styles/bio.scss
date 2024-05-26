@@ -364,3 +364,10 @@
     
 }
 
+.error {
+    border: 1px solid $error-border;
+}
+
+.error:focus {
+    outline: transparent;
+}

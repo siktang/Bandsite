@@ -20,7 +20,7 @@ class BandSiteApi {
         const createComment = async() => {
             try {
                 const newComment = await axios.post(
-                    this.baseUrl, 
+                    `${this.baseUrl}comments?api_key=${this.Key}`, 
                     {name: commentObject.value, 
                     date: new Date(), 
                     comment: commentObject.comment.value}
@@ -34,13 +34,19 @@ class BandSiteApi {
     }
 
 
-    getComment() {
-        const fetchComments = async () => {
+    async getComment() {
             try {
                 // store the response to the axios request 
                 const commentsData = await axios.get(`${this.baseUrl}comments?api_key=${this.Key}`);
                 // Axios already parsed JSON data when fetching
                 const commentsList = commentsData.data; 
+
+                // sorting the comment array
+                commentsList.sort((a, b) => {
+                    return b.timestamp - a.timestamp
+                } );
+
+                console.log(commentsList);
 
             } catch (error) {
                 console.log(error);
@@ -48,17 +54,29 @@ class BandSiteApi {
         }
 
 
-    }
+    getShows() {
+        const fetchShows = async () => {
+            try {
+                // store the response to the axios request 
+                const showsData = await axios.get(`${this.baseUrl}showdates?api_key=${this.Key}`);
+                // Axios already parsed JSON data when fetching
+                const showsList = showsData.data; 
 
-    async getShows() {
-
+            } catch (error) {
+                console.log(error);
+            }
+        }
     }
 }
 
 
-const test = async() => {
-const datalist = await axios.get(`${API_URL}comments?api_key=${API_KEY}`);
-console.log(datalist.data);
-}
+// const test = async() => {
+// const datalist = await axios.get(`${API_URL}showdates?api_key=${API_KEY}`);
+// console.log(datalist.data);
+// }
 
-test();
+// test();
+
+const test2 = new BandSiteApi(API_KEY);
+
+test2.getComment();

@@ -54,19 +54,20 @@ class BandSiteApi {
         }
 
 
-    getShows() {
-        const fetchShows = async () => {
+    async getShows() {
+        
             try {
                 // store the response to the axios request 
                 const showsData = await axios.get(`${this.baseUrl}showdates?api_key=${this.Key}`);
                 // Axios already parsed JSON data when fetching
                 const showsList = showsData.data; 
 
+                console.log(showsList);
             } catch (error) {
                 console.log(error);
             }
         }
-    }
+    
 }
 
 
@@ -80,3 +81,4 @@ class BandSiteApi {
 const test2 = new BandSiteApi(API_KEY);
 
 test2.getComment();
+test2.getShows();

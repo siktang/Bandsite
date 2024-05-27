@@ -2,7 +2,48 @@ const API_URL = "https://unit-2-project-api-25c1595833b2.herokuapp.com/";
 const API_KEY = "c33cf7a7-78ec-4150-ac97-2f7c69867d88";
 
 
+// Preset functions
+const createComments = (comments) => {
+    const commentSubmitted = document.createElement("section");
+    commentSubmitted.classList.add("comment__submitted");
+    commentBox.appendChild(commentSubmitted);
 
+    const commentItem = document.createElement("div");
+    commentItem.classList.add("comment__submitted--item");
+    commentSubmitted.appendChild(commentItem);
+
+    const noAvatar = document.createElement("div");
+    noAvatar.classList.add("comment__submitted--noAvatar");
+    commentItem.appendChild(noAvatar);
+
+    const commentContent = document.createElement("section");
+    commentContent.classList.add("comment__submitted--content");
+    commentItem.appendChild(commentContent);
+
+    const commentHeading = document.createElement("div");
+    commentHeading.classList.add("comment__submitted--header");
+    commentContent.appendChild(commentHeading);
+
+    const commentName = document.createElement("h3");
+    commentName.classList.add("comment__submitted--name");
+    commentName.textContent = comments.name;
+    commentHeading.appendChild(commentName);
+
+    const commentDate = document.createElement("h3");
+    commentDate.classList.add("comment__submitted--date");
+    const commentDateDetails = new Date(comments.timestamp);
+    commentDate.textContent = commentDateDetails.toLocaleDateString("es-pa");
+    commentHeading.appendChild(commentDate);
+
+    const commentDetails = document.createElement("p");
+    commentDetails.classList.add("comment__submitted--details");
+    commentDetails.textContent = comments.comment;
+    commentContent.appendChild(commentDetails);
+
+    const divider = document.createElement("div");
+    divider.classList.add("divider");
+    commentSubmitted.appendChild(divider);
+}
 
 class BandSiteApi {
     constructor(apiKey) {
@@ -47,6 +88,8 @@ class BandSiteApi {
                 } );
 
                 console.log(commentsList);
+                commentsList.forEach((comment) => createComments(comment));
+                
 
             } catch (error) {
                 console.log(error);
@@ -78,7 +121,7 @@ class BandSiteApi {
 
 // test();
 
-const test2 = new BandSiteApi(API_KEY);
+const bioAPI = new BandSiteApi(API_KEY);
 
-test2.getComment();
-test2.getShows();
+bioAPI.getComment();
+bioAPI.getShows();

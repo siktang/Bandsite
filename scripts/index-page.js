@@ -21,46 +21,7 @@ const displayFormFields = (targetForm) => {
 
 }
 
-const displayComments = (comments) => {
-    const commentSubmitted = document.createElement("section");
-    commentSubmitted.classList.add("comment__submitted");
-    commentBox.appendChild(commentSubmitted);
 
-    const commentItem = document.createElement("div");
-    commentItem.classList.add("comment__submitted--item");
-    commentSubmitted.appendChild(commentItem);
-
-    const noAvatar = document.createElement("div");
-    noAvatar.classList.add("comment__submitted--noAvatar");
-    commentItem.appendChild(noAvatar);
-
-    const commentContent = document.createElement("section");
-    commentContent.classList.add("comment__submitted--content");
-    commentItem.appendChild(commentContent);
-
-    const commentHeading = document.createElement("div");
-    commentHeading.classList.add("comment__submitted--header");
-    commentContent.appendChild(commentHeading);
-
-    const commentName = document.createElement("h3");
-    commentName.classList.add("comment__submitted--name");
-    commentName.textContent = comments.name;
-    commentHeading.appendChild(commentName);
-
-    const commentDate = document.createElement("h3");
-    commentDate.classList.add("comment__submitted--date");
-    commentDate.textContent = comments.date.toLocaleDateString("es-pa");
-    commentHeading.appendChild(commentDate);
-
-    const commentDetails = document.createElement("p");
-    commentDetails.classList.add("comment__submitted--details");
-    commentDetails.textContent = comments.comment;
-    commentContent.appendChild(commentDetails);
-
-    const divider = document.createElement("div");
-    divider.classList.add("divider");
-    commentSubmitted.appendChild(divider);
-}
 
 const validateForm = (name, comment) => {
     if (name.value.length === 0) {
@@ -111,23 +72,23 @@ const formFields = [
 ]
 
 
-const submittedComments = [
-    {
-        name: "Victor Pinto",
-        date: new Date("11/02/2023"),
-        comment: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
-    }, 
-    {
-        name: "Christina Cabrera",
-        date: new Date("10/28/2023"),
-        comment: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
-    }, 
-    {
-        name: "Isaac Tadesse",
-        date: new Date("10/20/2023"),
-        comment: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
-    }, 
-];
+// const submittedComments = [
+//     {
+//         name: "Victor Pinto",
+//         date: new Date("11/02/2023"),
+//         comment: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
+//     }, 
+//     {
+//         name: "Christina Cabrera",
+//         date: new Date("10/28/2023"),
+//         comment: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
+//     }, 
+//     {
+//         name: "Isaac Tadesse",
+//         date: new Date("10/20/2023"),
+//         comment: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
+//     }, 
+// ];
 
 
 // Create comment form and list
@@ -177,7 +138,7 @@ commentContainer.appendChild(divider);
 const commentBox = document.createElement("div");
 commentBox.classList.add("comment-box");
 
-submittedComments.forEach((item) => displayComments(item));
+
 commentContainer.appendChild(commentBox);
 
 
@@ -213,3 +174,49 @@ form.addEventListener("submit", (event) => {
 });
 
 
+/***********
+ * To be deleted before submission
+ * ************/ 
+
+// const displayComments = (comments) => {
+//     const commentSubmitted = document.createElement("section");
+//     commentSubmitted.classList.add("comment__submitted");
+//     commentBox.appendChild(commentSubmitted);
+
+//     const commentItem = document.createElement("div");
+//     commentItem.classList.add("comment__submitted--item");
+//     commentSubmitted.appendChild(commentItem);
+
+//     const noAvatar = document.createElement("div");
+//     noAvatar.classList.add("comment__submitted--noAvatar");
+//     commentItem.appendChild(noAvatar);
+
+//     const commentContent = document.createElement("section");
+//     commentContent.classList.add("comment__submitted--content");
+//     commentItem.appendChild(commentContent);
+
+//     const commentHeading = document.createElement("div");
+//     commentHeading.classList.add("comment__submitted--header");
+//     commentContent.appendChild(commentHeading);
+
+//     const commentName = document.createElement("h3");
+//     commentName.classList.add("comment__submitted--name");
+//     commentName.textContent = comments.name;
+//     commentHeading.appendChild(commentName);
+
+//     const commentDate = document.createElement("h3");
+//     commentDate.classList.add("comment__submitted--date");
+//     commentDate.textContent = comments.date.toLocaleDateString("es-pa");
+//     commentHeading.appendChild(commentDate);
+
+//     const commentDetails = document.createElement("p");
+//     commentDetails.classList.add("comment__submitted--details");
+//     commentDetails.textContent = comments.comment;
+//     commentContent.appendChild(commentDetails);
+
+//     const divider = document.createElement("div");
+//     divider.classList.add("divider");
+//     commentSubmitted.appendChild(divider);
+// }
+
+// submittedComments.forEach((item) => displayComments(item));

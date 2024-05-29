@@ -2,95 +2,6 @@ const API_URL = "https://unit-2-project-api-25c1595833b2.herokuapp.com/";
 const API_KEY = "c33cf7a7-78ec-4150-ac97-2f7c69867d88";
 
 
-// Preset functions
-const displayComments = (comments) => {
-    const commentSubmitted = document.createElement("section");
-    commentSubmitted.classList.add("comment__submitted");
-    commentBox.appendChild(commentSubmitted);
-
-    const commentItem = document.createElement("div");
-    commentItem.classList.add("comment__submitted--item");
-    commentSubmitted.appendChild(commentItem);
-
-    const noAvatar = document.createElement("div");
-    noAvatar.classList.add("comment__submitted--noAvatar");
-    commentItem.appendChild(noAvatar);
-
-    const commentContent = document.createElement("section");
-    commentContent.classList.add("comment__submitted--content");
-    commentItem.appendChild(commentContent);
-
-    const commentHeading = document.createElement("div");
-    commentHeading.classList.add("comment__submitted--header");
-    commentContent.appendChild(commentHeading);
-
-    const commentName = document.createElement("h3");
-    commentName.classList.add("comment__submitted--name");
-    commentName.textContent = comments.name;
-    commentHeading.appendChild(commentName);
-
-    const commentDate = document.createElement("h3");
-    commentDate.classList.add("comment__submitted--date");
-    const commentDateTimestamp = new Date(comments.timestamp);
-    commentDate.textContent = commentDateTimestamp.toLocaleDateString("es-pa");
-    commentHeading.appendChild(commentDate);
-
-    const commentDetails = document.createElement("p");
-    commentDetails.classList.add("comment__submitted--details");
-    commentDetails.textContent = comments.comment;
-    commentContent.appendChild(commentDetails);
-
-    const divider = document.createElement("div");
-    divider.classList.add("divider");
-    commentSubmitted.appendChild(divider);
-}
-
-const displayShows = (showItem) => {
-    const showItems = document.createElement("div");
-    showItems.classList.add("shows__show-item");
-    showsContainer.appendChild(showItems);
-
-    const showDateTitle = document.createElement("h4");
-    showDateTitle.classList.add("shows__show-item--mobile-header");
-    showDateTitle.textContent= "DATE";
-    showItems.appendChild(showDateTitle);
-
-    const showDate = document.createElement("p");
-    showDate.classList.add("shows__show-item--date");
-    const showDateTimestamp = new Date(showItem.date);
-    showDate.textContent= showDateTimestamp.toDateString();
-    showItems.appendChild(showDate);
-
-    const showVenueTitle = document.createElement("h4");
-    showVenueTitle.classList.add("shows__show-item--mobile-header");
-    showVenueTitle.textContent= "VENUE";
-    showItems.appendChild(showVenueTitle);
-
-    const showVenue = document.createElement("p");
-    showVenue.classList.add("shows__show-item--place");
-    showVenue.textContent= showItem.place;
-    showItems.appendChild(showVenue);
-
-    const showLocationTitle = document.createElement("h4");
-    showLocationTitle.classList.add("shows__show-item--mobile-header");
-    showLocationTitle.textContent= "LOCATION";
-    showItems.appendChild(showLocationTitle);
-
-    const showLocation = document.createElement("p");
-    showLocation.classList.add("shows__show-item--place");
-    showLocation.textContent= showItem.location;
-    showItems.appendChild(showLocation);
-
-    const button = document.createElement("button")
-    button.classList.add("shows__show-item--button");
-    button.textContent = "BUY TICKETS";
-    showItems.appendChild(button);
-
-    const divider = document.createElement("div");
-    divider.classList.add("divider--mobile");
-    showsContainer.appendChild(divider);
-}
-
 // Class created
 
 class BandSiteApi {
@@ -99,51 +10,84 @@ class BandSiteApi {
         this.baseUrl = API_URL;
     }
 
-    postComment(commentObject) {
+    async postComment(commentObject) {
         // newComment = {
         //     name: commentObject.value, 
         //     date: new Date(), 
         //     comment: commentObject.comment.value,
         // }
 
-        const createComment = async() => {
-            try {
-                const newComment = {name: commentObject.value, 
-                    date: new Date(), 
-                    comment: commentObject.comment.value}
+        // send comment object to server, and receive a JSON object (which will be parsed by Axios)
+        // use this method in the displayComments function, to utilize the returned object/response 
+        // so instead of using form/hard-coded array data as argument for displayComments, we are now using the returned object?
+        try {
+            const response = await axios.post(
+                `${this.baseUrl}comments?api_key=${this.Key}`, 
+                commentObject
+            );
 
-                await axios.post(
-                    `${this.baseUrl}comments?api_key=${this.Key}`, 
-                    newComment
-                );
-                // Axios will turn the object into JSON automatically
-            } catch (error) {
-                console.log(error);
-            }
+            this.getComment();
+
+
+        } catch (error) {
+            console.log(error);
         }
+
+        // const submitComment = async() => {
+        //     try {
+        //         const newComment = {
+        //             name: commentObject.name.value, 
+        //             comment: commentObject.comment.value}
+
+        //         await axios.post(
+        //             `${this.baseUrl}comments?api_key=${this.Key}`, 
+        //             newComment
+        //         );
+        //         // Axios will turn the object into JSON automatically
+        //     } catch (error) {
+        //         console.log(error);
+        //     }
+        // }
 
     }
 
 
     async getComment() {
             try {
-                // store the response to the axios request 
-                const commentsData = await axios.get(`${this.baseUrl}comments?api_key=${this.Key}`);
-                // Axios already parsed JSON data when fetching
-                const commentsList = commentsData.data; 
+                const commentsRes = await axios.get(`${this.baseUrl}comments?api_key=${this.Key}`);
 
-                // sorting the comment array
-                commentsList.sort((a, b) => {
-                    return b.timestamp - a.timestamp
-                } );
-
-                console.log(commentsList);
-                commentsList.forEach((comment) => displayComments(comment));
+                console.log(commentsRes.data);
                 
+                // const commentsRes = await axios.get(`${this.baseUrl}comments?api_key=${this.Key}`);
+                // const commentsList = commentsRes.data;
+
+                return commentsRes.data.sort((a, b) => {
+                            return b.timestamp - a.timestamp //returning an array of comments here? 
+                        } );
 
             } catch (error) {
-                console.log(error);
-            }
+                
+            } 
+
+
+            // try {
+            //     // store the response to the axios request 
+            //     const commentsData = await axios.get(`${this.baseUrl}comments?api_key=${this.Key}`);
+            //     // Axios already parsed JSON data when fetching
+            //     const commentsList = commentsData.data; 
+
+            //     // sorting the comment array
+            //     commentsList.sort((a, b) => {
+            //         return b.timestamp - a.timestamp
+            //     } );
+
+            //     console.log(commentsList);
+            //     commentsList.forEach((comment) => displayComments(comment));
+                
+
+            // } catch (error) {
+            //     console.log(error);
+            // }
         }
 
 
@@ -172,8 +116,58 @@ class BandSiteApi {
 
 // test();
 
-const bioAPI = new BandSiteApi(API_KEY);
-bioAPI.getComment();
+export const bioAPI = new BandSiteApi(API_KEY);
 
-const showsAPI = new BandSiteApi(API_KEY);
-showsAPI.getShows();
+// bioAPI.getComment();
+
+
+
+
+
+// const showsAPI = new BandSiteApi(API_KEY);
+// showsAPI.getShows();
+
+
+// const validateForm = (name, comment) => {
+//     if (name.value.length === 0) {
+//         name.classList.add("error");
+//         alert("Please enter your name!");
+//         return false;
+//     } else if (comment.value.length === 0) {
+//         comment.classList.add("error");
+//         alert("Please enter your comment!");
+//         return false;
+//     } else {
+//         return true;
+//     }
+// }
+
+
+//  form.addEventListener("submit", async (event) => {
+//     event.preventDefault();
+
+//     const isValid = validateForm(event.target.name, event.target.comment)
+    
+//     if (isValid === true) {
+//     const errorItems = document.querySelectorAll(".error");
+//         errorItems.forEach(
+//             (item) => item.classList.remove("error")  
+//         );
+
+//     const newComment = {
+//         name: event.target.name.value, 
+//         comment: event.target.comment.value,
+//     };
+
+//     await axios.post(`${API_URL}comments?api_key=${API_KEY}`, newComment);
+//     // commentBox.replaceChildren();
+
+//     // submittedComments.unshift(newComment);
+
+//     // submittedComments.forEach((item) => displayComments(item));
+//     // commentContainer.appendChild(commentBox);
+
+//     // form.reset();
+//     }
+
+// });

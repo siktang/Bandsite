@@ -1,5 +1,6 @@
 @use './typography' as *;
 @use './variables' as *;
+@use './mixins' as *;
 
 // General rules
 html {
@@ -29,14 +30,14 @@ img {
   border-bottom: 1px solid $secondary-color-silver;
   margin: 0 1rem 1rem 1rem;
 
-  @media screen and (min-width: $tablet-breakpoint) {
+  @include tablet {
     width: 75vw;
     margin-left: auto;
     margin-right: auto;
     padding: 0 0 1rem 0;
   }
 
-  @media screen and (min-width: $desktop-breakpoint) {
+  @include desktop {
   width: 47vw;
   }
 
@@ -60,7 +61,7 @@ img {
     background-color: $primary-color-black;
     z-index: 1;
 
-    @media screen and (min-width: $tablet-breakpoint) {
+    @include tablet {
       display: flex;
       align-items: center;
     }
@@ -68,11 +69,11 @@ img {
     &__logo {
       margin: 1rem 1rem 0.25rem 1rem;
 
-      @media screen and (min-width: $tablet-breakpoint) {
+      @include tablet {
         margin: 1.5rem 2.25rem 1rem 2.25rem;
       }
 
-      @media screen and (min-width: $desktop-breakpoint) {
+      @include desktop {
         margin-left: 0;
       }
     }
@@ -82,13 +83,13 @@ img {
     flex-direction: column;
     justify-content: space-between;
 
-      @media screen and (min-width: $tablet-breakpoint) {
+      @include tablet {
         flex-direction: row;
         justify-content: flex-start;
         align-items: center;
       }
 
-      @media screen and (min-width: $desktop-breakpoint) {
+      @include desktop {
         width: $desktop-element-width;
         margin-left: auto;
         margin-right: auto;
@@ -99,7 +100,7 @@ img {
         justify-content: space-around;
         list-style-type: none;
 
-        @media screen and (min-width: $tablet-breakpoint) {
+        @include tablet {
           padding-top: 0.5rem;
         }
 
@@ -107,7 +108,7 @@ img {
           width: 50vw;
           padding-bottom: 0.5rem;
 
-          @media screen and (min-width: $tablet-breakpoint) {
+          @include tablet {
             width: auto;
           }
         }
@@ -124,7 +125,7 @@ img {
           border-bottom: 0.25rem solid;
           border-color: $primary-color-white;
 
-          @media screen and (min-width: $tablet-breakpoint) {
+          @include tablet {
             border: none;
           }
 
@@ -132,7 +133,7 @@ img {
           color: $primary-color-white;
           font-weight: 700;
             
-            @media screen and (min-width: $tablet-breakpoint) {
+            @include tablet {
               text-decoration: underline;
               text-decoration-color: $primary-color-white;
               text-decoration-thickness: 0.25rem;
@@ -160,7 +161,7 @@ img {
     }
 
     .footer-items {
-      @media screen and (min-width:$tablet-breakpoint) {
+      @include tablet {
         display: flex;
         flex-direction: column;
         width: auto;
@@ -168,7 +169,7 @@ img {
         margin-right: 2.25rem;
       }
 
-      @media screen and (min-width:$desktop-breakpoint) {
+      @include desktop {
         width: $desktop-element-width;
         margin-left: auto;
         margin-right: auto;
@@ -189,14 +190,14 @@ img {
           padding: 0 0 1rem 0;
           width: 14.25rem;
 
-          @media screen and (min-width:$tablet-breakpoint) {
+          @include tablet {
             padding: 0;
             margin-left: 0;
             margin-right: 0;
           }
         }
       
-      @media screen and (min-width:$tablet-breakpoint) {
+      @include tablet {
         display: flex;
         align-items: center;
       }  
@@ -206,7 +207,7 @@ img {
         justify-content: flex-start;
         width: 15rem;
       
-        @media screen and (min-width:$tablet-breakpoint) {
+        @include tablet {
           justify-content: center;
         }
 
@@ -214,7 +215,7 @@ img {
           width: auto;
           height: auto;
 
-          @media screen and (min-width:$tablet-breakpoint) {
+          @include tablet {
             width: 3rem;
             height: 1.75rem;
             padding: 0;
@@ -228,7 +229,7 @@ img {
     &__contact-info {
       margin-bottom: 3rem;
 
-      @media screen and (min-width:$tablet-breakpoint) {
+      @include tablet {
         display: flex;
         justify-content: space-between;
         margin-bottom: 0;
@@ -241,12 +242,12 @@ img {
       .body-copy {
         padding: 0.5rem 1rem 0.5rem 1rem; 
 
-        @media screen and (min-width:$tablet-breakpoint) {
+        @include tablet {
           padding: 0.5rem 0 0.5rem 0; 
         }
       }
 
-      @media screen and (min-width:$desktop-breakpoint) {
+     @include desktop {
         width: 75%;
       }
     }
@@ -262,7 +263,7 @@ img {
       left: 1rem;
       margin-bottom: 2rem;
       
-      @media screen and (min-width:$tablet-breakpoint) {
+      @include tablet {
         display: none;
       }  
       
@@ -271,7 +272,7 @@ img {
     &__logo--tablet {
       display: none;
 
-      @media screen and (min-width:$tablet-breakpoint) {
+      @include tablet {
         display: block;
       } 
     }
@@ -298,14 +299,14 @@ img {
     margin-left: 1rem;
     margin-right: 1rem;
 
-  @media screen and (min-width:$tablet-breakpoint) {
+  @include tablet {
       font-size: 2.25rem;
       line-height: 2.75rem;
       margin-left: 2.25rem;
       margin-right: 2.25rem;
     }
     
-  @media screen and (min-width:$desktop-breakpoint) {
+ @include desktop {
       font-size: 2.25rem;
       line-height: 2.75rem; 
       width: $desktop-element-width;
@@ -319,7 +320,7 @@ img {
     font-weight: 600;
     padding: 1rem;
 
-    @media screen and (min-width:$tablet-breakpoint) {
+    @include tablet {
       font-size: 1.5rem;
       line-height: 2rem;
       padding-left: 0;
@@ -332,7 +333,7 @@ img {
     line-height: 1.125rem;
     padding: 1rem;
 
-    @media screen and (min-width:$tablet-breakpoint) {
+    @include tablet {
       font-size: 0.875rem;
       line-height: 1.375rem;
       padding-left: 0;

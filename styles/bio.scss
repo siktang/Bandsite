@@ -11,7 +11,7 @@
     background-size: cover;
     height: 35vh;
 
-    @media screen and (min-width: $tablet-breakpoint) {
+    @include tablet {
         height: 80vh;
     }
 
@@ -21,13 +21,13 @@
         padding: 1rem;
         font-weight: 700;
 
-        @media screen and (min-width:$tablet-breakpoint) {
+        @include tablet {
             font-size: 3.75rem;
             line-height: 4.25rem;
             margin-left: 1.25rem
         }
 
-        @media screen and (min-width:$desktop-breakpoint) {
+        @include desktop {
             width: $desktop-element-width;
             padding: 0;
             margin-left: auto;
@@ -43,11 +43,11 @@
     &__title {
     padding: 1.5rem 0 1rem 0;
 
-        @media screen and (min-width: $tablet-breakpoint) {
+        @include tablet {
             padding: 3rem 0 2.25rem 0;
         }
 
-        @media screen and (min-width: $desktop-breakpoint) {
+        @include desktop {
             padding-left: 0;
             width: $desktop-element-width;
             margin-left: auto;
@@ -60,7 +60,7 @@
     padding-bottom: 1.75rem;
     background-color: $primary-color-white;
 
-    @media screen and (min-width:$tablet-breakpoint) {
+    @include tablet {
         display: flex;
         flex-direction: column;
         width: 75vw;
@@ -68,7 +68,7 @@
         margin-right: auto;
     }
 
-    @media screen and (min-width:$desktop-breakpoint) {
+    @include desktop {
         width: 55.313rem;
 
         &__image {
@@ -89,7 +89,7 @@
     &__quote {
         padding: 1rem 1rem 0.5rem 1rem;
 
-        @media screen and (min-width:$tablet-breakpoint) {
+        @include tablet {
             font-size: 1.5rem;
             font-weight: 600;
         }
@@ -101,20 +101,20 @@
 
 
     &__image, &__quote, &__quotee {
-        @media screen and (min-width:$tablet-breakpoint) {
+        @include tablet {
             width: 75vw;
             display: block;
             margin-left: auto;
             margin-right: auto;
         }
 
-        @media screen and (min-width: $desktop-breakpoint) {
+        @include desktop {
             width: 55.313rem;
         }
     }
 
     &__title, &__article {
-        @media screen and (min-width: $tablet-breakpoint) {
+        @include tablet {
             width: 75vw;
             margin-left: auto;
             margin-right: auto;
@@ -122,13 +122,13 @@
             padding-right: 1rem;
         }
 
-        @media screen and (min-width: $desktop-breakpoint) {
+        @include desktop {
             width: 55.313rem;
         }
     }
 
     &__article {
-        @media screen and (min-width: $tablet-breakpoint) {
+        @include tablet {
             display: flex;
             justify-content: space-evenly;            
         }
@@ -142,7 +142,7 @@
     padding-bottom: 0.25rem;
 
     h2 {
-        @media screen and (min-width: $desktop-breakpoint) {
+        @include desktop {
             padding: 0;
         }
     }
@@ -166,7 +166,7 @@
             }
         }
 
-        @media screen and (min-width: $tablet-breakpoint) {
+        @include tablet {
             gap: 1.5rem;
             margin: 2.25rem;
         
@@ -183,7 +183,7 @@
     }
 
     h2, &__img-container {
-        @media screen and (min-width: $desktop-breakpoint) {
+        @include desktop {
            width: $desktop-element-width;
            margin-left: auto;
            margin-right: auto;
@@ -194,14 +194,14 @@
 .comment {
     background-color: $primary-color-white;
 
-    @media screen and (min-width: $tablet-breakpoint) {
+    @include tablet {
         padding-bottom: 1.25rem;
     }
 
     .section-header {
         padding: 1rem 0 1rem 0;
 
-        @media screen and (min-width: $tablet-breakpoint) {
+        @include tablet {
             padding: 2.5rem 0 2.5rem 0;
         }
     }
@@ -211,14 +211,14 @@
         width: 100vw;
         padding: 0 1rem 1rem 1rem;
 
-        @media screen and (min-width: $tablet-breakpoint) {
+        @include tablet {
             width: 75vw;
             margin-left: auto;
             margin-right: auto;
             padding: 0 0 1rem 0;
         }
 
-        @media screen and (min-width: $desktop-breakpoint) {
+        @include desktop {
             width: 40vw;
         }
 
@@ -256,7 +256,7 @@
                 outline: 1px solid $primary-color-black;
             }
 
-            @media screen and (min-width: $tablet-breakpoint) {
+            @include tablet {
                 padding: 1rem;
             }
         }
@@ -278,7 +278,7 @@
                 background-color: $secondary-color-black;
             }
 
-            @media screen and (min-width: $tablet-breakpoint) {
+            @include tablet {
                 width: 9.375rem;
                 padding-left: 2rem;
                 padding-right: 2rem;
@@ -293,7 +293,7 @@
     #name {
         min-height: 2.25rem;
 
-        @media screen and (min-width: $tablet-breakpoint) {
+        @include tablet {
             min-height: 3rem;
         }
     }
@@ -315,14 +315,14 @@
             width: 100vw;
             padding: 0 1rem 1rem 1rem;
 
-            @media screen and (min-width: $tablet-breakpoint) {
+            @include tablet {
                 width: 75vw;
                 margin-left: auto;
                 margin-right: auto;
                 padding: 0 0 1rem 0;
             }
 
-            @media screen and (min-width: $desktop-breakpoint) {
+            @include desktop {
                 width: 40vw;
             }
         }

@@ -1,12 +1,11 @@
-const API_URL = "https://unit-2-project-api-25c1595833b2.herokuapp.com/";
-const API_KEY = "c33cf7a7-78ec-4150-ac97-2f7c69867d88";
+const API_URL = "https://unit-2-project-api-25c1595833b2.herokuapp.com";
 
 
 // Class created
 
 class BandSiteApi {
     constructor(apiKey) {
-        this.Key = apiKey;
+        this.apiKey = apiKey;
         this.baseUrl = API_URL;
     }
 
@@ -22,12 +21,9 @@ class BandSiteApi {
         // so instead of using form/hard-coded array data as argument for displayComments, we are now using the returned object?
         try {
             const response = await axios.post(
-                `${this.baseUrl}comments?api_key=${this.Key}`, 
+                `${this.baseUrl}/comments?api_key=${this.apiKey}`, 
                 commentObject
             );
-
-            this.getComment();
-
 
         } catch (error) {
             console.log(error);
@@ -52,55 +48,29 @@ class BandSiteApi {
     }
 
 
-    async getComment() {
+    async getComments() {
             try {
-                const commentsRes = await axios.get(`${this.baseUrl}comments?api_key=${this.Key}`);
-
-                console.log(commentsRes.data);
+                const response = await axios.get(`${this.baseUrl}/comments?api_key=${this.apiKey}`);
                 
-                // const commentsRes = await axios.get(`${this.baseUrl}comments?api_key=${this.Key}`);
-                // const commentsList = commentsRes.data;
-
-                return commentsRes.data.sort((a, b) => {
-                            return b.timestamp - a.timestamp //returning an array of comments here? 
+                const commentsList = response.data;
+                commentsList.sort((a, b) => {
+                            return b.timestamp - a.timestamp 
                         } );
-
+                
+                return commentsList;
             } catch (error) {
-                
+                console.log(error);
             } 
-
-
-            // try {
-            //     // store the response to the axios request 
-            //     const commentsData = await axios.get(`${this.baseUrl}comments?api_key=${this.Key}`);
-            //     // Axios already parsed JSON data when fetching
-            //     const commentsList = commentsData.data; 
-
-            //     // sorting the comment array
-            //     commentsList.sort((a, b) => {
-            //         return b.timestamp - a.timestamp
-            //     } );
-
-            //     console.log(commentsList);
-            //     commentsList.forEach((comment) => displayComments(comment));
-                
-
-            // } catch (error) {
-            //     console.log(error);
-            // }
         }
-
 
     async getShows() {
         
             try {
                 // store the response to the axios request 
-                const showsData = await axios.get(`${this.baseUrl}showdates?api_key=${this.Key}`);
+                const response = await axios.get(`${this.baseUrl}/showdates?api_key=${this.Key}`);
                 // Axios already parsed JSON data when fetching
-                const showsList = showsData.data; 
+                return response.data; 
 
-                showsList.forEach((showItem) => displayShows(showItem));
-                console.log(showsList);
             } catch (error) {
                 console.log(error);
             }
@@ -116,7 +86,7 @@ class BandSiteApi {
 
 // test();
 
-export const bioAPI = new BandSiteApi(API_KEY);
+export default BandSiteApi;
 
 // bioAPI.getComment();
 

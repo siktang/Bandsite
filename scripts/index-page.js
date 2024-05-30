@@ -28,7 +28,19 @@ const displayFormFields = (targetForm) => {
 }
 
 const validateForm = (name, comment) => {
-    if (name.value.length === 0) {
+    // reset error border on all elements before validation
+    const errorItems = document.querySelectorAll(".error");
+    errorItems.forEach(
+        (item) => item.classList.remove("error")
+    );
+
+    // validate
+    if (name.value.length === 0 && comment.value.length === 0) {
+        name.classList.add("error");
+        comment.classList.add("error");
+        alert("Please enter your name and comment!");
+        return false;
+    } else if (name.value.length === 0) {
         name.classList.add("error");
         alert("Please enter your name!");
         return false;
@@ -186,34 +198,31 @@ const displayComments = async () => {
 displayComments();
 
 
+
+
+
 // Form validation
 
-form.addEventListener("submit", (event) => {
+form.addEventListener("submit", async (event) => {
     event.preventDefault();
 
     const isValid = validateForm(event.target.name, event.target.comment)
     
     if (isValid === true) {
-    const errorItems = document.querySelectorAll(".error");
-        errorItems.forEach(
-            (item) => item.classList.remove("error")  
-        );
+        const errorItems = document.querySelectorAll(".error");
+            errorItems.forEach(
+                (item) => item.classList.remove("error")  
+            );
 
-    const newComment = {
-        name: event.target.name.value, 
-        date: new Date(), 
-        comment: event.target.comment.value,
-    };
+        const newComment = {
+            name: event.target.name.value,
+            comment: event.target.comment.value,
+        };
 
-    commentBox.replaceChildren();
+        await bandSiteApi.postComment(newComment);
+        displayComments();
 
-    submittedComments.unshift(newComment);
-
-    submittedComments.forEach((item) => displayComments(item));
-    commentContainer.appendChild(commentBox);
-
-    form.reset();
+        form.reset();
     }
-
 });
 

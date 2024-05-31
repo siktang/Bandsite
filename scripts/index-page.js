@@ -198,9 +198,6 @@ const displayComments = async () => {
 displayComments();
 
 
-
-
-
 // Form validation
 
 form.addEventListener("submit", async (event) => {
@@ -210,9 +207,9 @@ form.addEventListener("submit", async (event) => {
     
     if (isValid === true) {
         const errorItems = document.querySelectorAll(".error");
-            errorItems.forEach(
-                (item) => item.classList.remove("error")  
-            );
+        errorItems.forEach(
+            (item) => item.classList.remove("error")  
+        );
 
         const newComment = {
             name: event.target.name.value,

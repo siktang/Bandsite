@@ -65,7 +65,7 @@ const addClickEvent = () => {
                 item.classList.remove("shows__selected");
             });
             
-        item.classList.add("shows__selected");
+            item.classList.add("shows__selected");
         })
     })
 };
@@ -110,6 +110,4 @@ const tabletLocationTitle = document.createElement("h4");
 tabletLocationTitle.classList.add("shows__tablet--header--location");
 tabletLocationTitle.textContent = "LOCATION";
 tabletHeaderContainer.appendChild(tabletLocationTitle);
-
-
 
